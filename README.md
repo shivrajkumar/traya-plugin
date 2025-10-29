@@ -281,10 +281,12 @@ API design, testing, and validation.
 
 ## All Skills
 
-The plugin includes 1 specialized skill for complete workflows:
+The plugin includes 3 specialized skills for complete workflows:
 
-### UI Development
-- **ui-developer:** Complete Figma-to-Next.js workflow with automated visual validation using Chrome DevTools
+### UI Development & Testing
+- **ui-developer:** Complete Figma-to-Next.js workflow with iterative design-matching and visual validation
+- **ui-tester:** Comprehensive UI testing and debugging with Chrome DevTools integration
+- **code-reviewer:** Dual-layer code review (task completion + technical quality) with production approval
 
 ## Getting Started
 
@@ -294,8 +296,10 @@ The plugin includes 1 specialized skill for complete workflows:
 4. Run `/traya:plan` on your next feature idea
 5. Use `/traya:work` to execute the plan
 6. Use `ui-developer` skill for Figma-to-code implementation
-7. Run `/traya:review` before merging
-8. Repeat, and watch your development process compound
+7. Use `ui-tester` skill to test and debug the implementation
+8. Use `code-reviewer` skill for final quality review
+9. Run `/traya:review` before merging
+10. Repeat, and watch your development process compound
 
 Each cycle makes the next cycle easier. That's compounding engineering.
 

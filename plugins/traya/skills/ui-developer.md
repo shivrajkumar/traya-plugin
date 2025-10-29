@@ -1,245 +1,398 @@
 ---
 name: ui-developer
-description: Complete UI development workflow skill for building Next.js pages from Figma designs with automated validation
-enabled: true
+description: Comprehensive UI development workflow for Next.js applications. Use this skill when building new pages or components from Figma designs. The skill implements an iterative design-matching process using Figma MCP to extract design specifications, Serena MCP to analyze existing codebase patterns, Context7 MCP for library documentation, and Chrome DevTools MCP for visual verification and console error checking. Supports SSR, CSR, and SSG page types with automatic pattern detection.
 ---
 
-# UI Developer Skill
+# UI Developer
 
-Comprehensive UI development workflow for transforming Figma designs into production-ready Next.js components with automated validation using Chrome DevTools.
+## Overview
 
-## When to Use
+This skill provides a complete UI development workflow that bridges Figma designs to production-ready Next.js code. The workflow uses an iterative design-matching loop: extract design specifications from Figma, analyze existing codebase patterns, implement code following best practices, verify visual accuracy in Chrome, check for console errors, and refine until the implementation matches the design perfectly.
 
-Use this skill when:
-- Building new pages from Figma designs
-- Converting Figma components to Next.js/React
-- Creating pixel-perfect UI implementations
-- Need automated visual validation against designs
+## Core Workflow
 
-## Required MCP Servers
+Follow this sequential workflow for all UI development tasks:
 
-- **Figma MCP**: Extract designs and design tokens
-- **Chrome DevTools MCP**: Visual validation and testing
-- **Context7**: Latest Next.js/React/Tailwind patterns
-- **Serena**: Discover reusable components in codebase
+### Phase 1: Design Analysis & Planning
 
-## Workflow Steps
+**1. Extract Design Specifications**
 
-### 1. Design Analysis (Planning Phase)
+Use Figma MCP to analyze the design:
+- Identify all components, layouts, and interactive elements
+- Extract colors, typography, spacing, and responsive breakpoints
+- Document component hierarchy and relationships
+- Note any animations, transitions, or micro-interactions
+- Capture design tokens (colors, fonts, shadows, borders)
 
-First, analyze the Figma design and plan the implementation:
+**2. Analyze Existing Codebase**
 
-```markdown
-**Step 1: Design Analysis**
-
-I'll analyze the Figma design and plan the implementation.
-
-Coordinating with ui-ux-designer to:
-1. Analyze design structure and component breakdown
-2. Identify reusable patterns
-3. Plan responsive breakpoints
-4. Check accessibility requirements
-
-Using Figma MCP to:
-- Extract design specifications
-- Get design tokens (colors, typography, spacing)
-- Identify component mappings
-
-Using Serena to:
-- Find existing components we can reuse
-- Understand project patterns
+Use Serena MCP to understand current patterns:
+```
+mcp__serena__search_for_pattern - Search for similar components or patterns
+mcp__serena__get_symbols_overview - Get overview of relevant files
+mcp__serena__find_symbol - Find specific components for reusability
 ```
 
-**Ask the user**:
-- Figma design (link or selected in Figma Desktop)
-- Target file location (e.g., `app/dashboard/page.tsx`)
-- Page context and navigation
-- Any elements to exclude
+Focus on:
+- Existing component structures and naming conventions
+- Context usage patterns (cart-store, questions-store, CustomerDataContext, AnalyticsContext)
+- Tailwind utility patterns and custom classes
+- Form validation patterns
+- API integration patterns using fetchRequest helper
+- Error handling conventions
 
-### 2. Code Generation
+**3. Gather Library Documentation**
 
-Generate Next.js code following project patterns:
-
-```markdown
-**Step 2: Code Generation**
-
-Using Context7 for:
-- Next.js 14 App Router patterns
-- Tailwind CSS best practices
-- React Server Components usage
-
-Coordinating with frontend-developer for:
-- Component implementation
-- TypeScript types
-- Tailwind styling
-- State management (if needed)
-
-Implementation approach:
-1. Create page/component structure
-2. Extract and apply design tokens
-3. Reuse existing components (from Serena)
-4. Implement responsive design
-5. Add proper TypeScript types
-6. Follow project conventions
+Use Context7 MCP to fetch current documentation:
+```
+mcp__context7__resolve-library-id - Resolve library names
+mcp__context7__get-library-docs - Get latest documentation
 ```
 
-**Generate**:
-- Page/component file with TypeScript
-- Design tokens file (if needed)
-- Import existing reusable components
+Priority libraries:
+- Next.js (App Router, SSR/CSR/SSG patterns)
+- React (hooks, context, server components)
+- Tailwind CSS (utility classes, custom configuration)
+- Any specific libraries used in the component (forms, animations, etc.)
 
-### 3. Chrome DevTools Validation
+**4. Determine Rendering Strategy**
 
-Validate implementation against Figma design:
+Choose the appropriate rendering approach:
 
-```markdown
-**Step 3: Validation with Chrome DevTools**
+**SSR (Server-Side Rendering)** - DEFAULT for most pages
+- Use when: Dynamic content, SEO important, personalized data
+- Implementation: Server Components (default in App Router)
+- Fetch data in server components or with async/await
+- Example: Product pages, user dashboards, form pages
 
-Please ensure dev server is running at [URL].
+**CSR (Client-Side Rendering)** - Use sparingly
+- Use when: Highly interactive, real-time updates, client-only features
+- Implementation: 'use client' directive + useEffect for data fetching
+- Example: Interactive games, real-time chat, complex animations
 
-Using Chrome DevTools MCP to:
-1. Navigate to the page
-2. Capture screenshot
-3. Compare with Figma design
-4. Check console for errors
-5. Validate responsive behavior (375px, 768px, 1440px)
-6. Run Lighthouse audit
-7. Check accessibility
+**SSG (Static Site Generation)** - For static content
+- Use when: Content rarely changes, no personalization needed
+- Implementation: generateStaticParams() for dynamic routes
+- Example: Marketing pages, blog posts, documentation
 
-Generating validation report...
+### Phase 2: Implementation
+
+**5. Create Component Structure**
+
+Follow Next.js 13.5 App Router conventions:
+- Place pages in `app/` directory with proper routing
+- Place reusable components in `components/` directory
+- Use TypeScript for type safety
+- Follow existing naming conventions from codebase
+
+**6. Implement with Best Practices**
+
+Code quality standards:
+- **Component Structure**: Keep components focused and single-responsibility
+- **Type Safety**: Use TypeScript interfaces for props and data structures
+- **State Management**: Use Context API for global state, useState/useReducer for local
+- **Styling**: Use Tailwind utilities, reference custom theme configuration
+- **Accessibility**: Include proper ARIA labels, semantic HTML, keyboard navigation
+- **Performance**: Lazy load images, code split heavy components, memoize expensive computations
+- **Error Boundaries**: Wrap components with error handling
+
+**7. Integrate with Existing Systems**
+
+Ensure proper integration:
+- Wire up context providers if needed (cart, questions, analytics)
+- Use fetchRequest helper for API calls with proper error handling
+- Integrate MoEngage, Clarity, or GTM tracking as appropriate
+- Follow environment configuration patterns from next.config.js
+- Use constants from `constants/urls.js` for API endpoints
+
+### Phase 3: Visual Verification Loop
+
+**8. Start Development Server**
+
+```bash
+npm run dev
 ```
 
-**Validation Checklist**:
-- [ ] Visual match with Figma (colors, typography, spacing)
-- [ ] Zero console errors
-- [ ] Responsive at all breakpoints
-- [ ] Lighthouse score > 90
-- [ ] No accessibility violations
+**9. Visual Verification with Chrome DevTools**
 
-### 4. Iterative Fixes
+Use Chrome DevTools MCP to verify implementation:
 
-Fix any issues found:
-
-```markdown
-**Step 4: Fixing Issues**
-
-Based on validation report:
-
-Critical Issues (must fix):
-- [List critical issues]
-
-Important Issues (should fix):
-- [List important issues]
-
-Nice to Have:
-- [List minor issues]
-
-Fixing each issue and re-validating...
+**Initial Load & Navigation:**
+```
+mcp__chrome-devtools__navigate_page - Navigate to the component
+mcp__chrome-devtools__take_screenshot - Capture current state
+mcp__chrome-devtools__take_snapshot - Get accessibility tree
 ```
 
-**Fix Process**:
-1. Identify specific issue
-2. Coordinate with appropriate agent (frontend-developer, ui-ux-designer, performance-engineer)
-3. Implement fix
-4. Re-validate with Chrome DevTools
-5. Repeat until all critical issues resolved
+**Visual Comparison Process:**
+1. Compare screenshot against Figma design side-by-side
+2. Check for differences in:
+   - Layout and spacing (margins, padding, gaps)
+   - Colors and backgrounds
+   - Typography (font family, size, weight, line-height)
+   - Borders and shadows
+   - Component alignment and positioning
+   - Responsive behavior at different breakpoints
 
-### 5. Completion
-
-Final validation and documentation:
-
-```markdown
-**Step 5: UI Completion**
-
-Running final validation checklist...
-
-✅ Visual Design
-   - Colors match Figma
-   - Typography correct
-   - Spacing matches design
-   - Icons and images optimized
-
-✅ Technical
-   - Zero console errors
-   - All interactions work
-   - Hover/focus states implemented
-
-✅ Performance
-   - Lighthouse score: [SCORE]
-   - LCP: [TIME]
-   - FID: [TIME]
-   - CLS: [SCORE]
-
-✅ Responsive
-   - Mobile (375px): Perfect
-   - Tablet (768px): Perfect
-   - Desktop (1440px): Perfect
-
-✅ Accessibility
-   - WCAG 2.1 AA compliant
-   - Keyboard navigation works
-   - Screen reader friendly
-
-**UI is complete and ready for API integration!**
-
-Next steps: Run `/api-workflow` to integrate backend APIs.
+**Console & Error Checking:**
+```
+mcp__chrome-devtools__list_console_messages - Check for console errors/warnings
+mcp__chrome-devtools__list_network_requests - Verify API calls are working
 ```
 
-## Agent Coordination
+Look for:
+- JavaScript errors or warnings
+- Failed network requests
+- Missing resources (images, fonts, stylesheets)
+- Performance warnings
+- Accessibility violations
 
-### Always Coordinate With
+**10. Responsive Testing**
 
-- **ui-ux-designer**: Design validation, accessibility, responsive design
-- **frontend-developer**: Implementation, code quality
-- **performance-engineer**: Performance optimization
-- **code-reviewer**: Code quality review before completion
-
-### Optional Coordination
-
-- **backend-architect**: If API integration points need planning
-- **security-auditor**: If authentication UI or sensitive data display
-
-## Success Criteria
-
-The skill is successful when:
-- ✅ Visual design matches Figma perfectly
-- ✅ Zero console errors
-- ✅ Lighthouse score > 90
-- ✅ Core Web Vitals meet targets (LCP < 2.5s, FID < 100ms, CLS < 0.1)
-- ✅ Responsive on all breakpoints
-- ✅ WCAG 2.1 AA accessibility compliance
-- ✅ Code follows project conventions
-- ✅ Ready for API integration
-
-## Common Issues and Solutions
-
-### Issue: Visual doesn't match Figma
-**Solution**:
-1. Use Chrome DevTools inspect to compare exact measurements
-2. Verify design tokens were extracted correctly
-3. Check for inherited styles interfering
-4. Coordinate with ui-ux-designer for adjustments
-
-### Issue: Console errors
-**Solution**:
-1. Read full error stack trace
-2. Fix immediately (missing imports, undefined variables, etc.)
-3. Re-validate after each fix
-
-### Issue: Poor performance
-**Solution**:
-1. Coordinate with performance-engineer
-2. Optimize images (use next/image)
-3. Implement code splitting for heavy components
-4. Add proper loading states
-
-### Issue: Responsive breaks
-**Solution**:
-1. Test each breakpoint systematically
-2. Use mobile-first Tailwind approach
-3. Coordinate with ui-ux-designer for responsive adjustments
-
-## Example Usage
-
+Test at key breakpoints:
 ```
-User: "I have a dashboard layout selected in Figma. Create the page."
+mcp__chrome-devtools__resize_page - Test different viewport sizes
+```
+
+Standard breakpoints (from Tailwind config):
+- Mobile: 375px, 428px
+- Tablet: 768px, 834px
+- Desktop: 1024px, 1280px, 1440px, 1920px
+
+**11. Interactive Element Testing**
+
+Test all interactive elements:
+```
+mcp__chrome-devtools__click - Test buttons, links, form elements
+mcp__chrome-devtools__hover - Verify hover states
+mcp__chrome-devtools__fill_form - Test form inputs
+mcp__chrome-devtools__evaluate_script - Test JavaScript interactions
+```
+
+Verify:
+- Button hover and active states
+- Form validation and error messages
+- Loading states and transitions
+- Modal open/close behavior
+- Dropdown and navigation interactions
+
+### Phase 4: Iteration & Refinement
+
+**12. Identify Discrepancies**
+
+Document all differences between implementation and design:
+- Visual differences (use screenshot comparisons)
+- Functionality gaps
+- Performance issues
+- Console errors or warnings
+- Accessibility issues
+
+**13. Fix Issues Iteratively**
+
+For each discrepancy:
+1. Determine root cause
+2. Implement fix in code
+3. Verify fix in Chrome DevTools
+4. Confirm no new issues introduced
+5. Re-check console for errors
+
+**14. Repeat Until Perfect Match**
+
+Continue the verification loop (steps 9-13) until:
+- Visual implementation matches Figma design pixel-perfectly
+- All interactive elements work as designed
+- No console errors or warnings
+- All API calls succeed
+- Responsive behavior is correct at all breakpoints
+- Performance is acceptable (check Core Web Vitals if needed)
+
+### Phase 5: Final Validation
+
+**15. Comprehensive Testing Checklist**
+
+Before completing, verify:
+- [ ] Visual match with Figma at all breakpoints
+- [ ] No console errors or warnings
+- [ ] All network requests successful
+- [ ] Forms validate and submit correctly
+- [ ] Context providers integrated properly
+- [ ] Analytics tracking implemented
+- [ ] Loading states and error states handled
+- [ ] Accessibility requirements met (ARIA, keyboard nav)
+- [ ] Performance acceptable (no blocking operations)
+- [ ] Code follows project conventions and best practices
+
+**16. Documentation**
+
+Document:
+- Component purpose and usage
+- Props interface and descriptions
+- Any special considerations or gotchas
+- Integration points (contexts, APIs, etc.)
+
+## MCP Server Usage Patterns
+
+### Figma MCP
+- Extract design specifications, colors, typography, spacing
+- Get component hierarchies and relationships
+- Identify responsive breakpoints and behavior
+
+### Serena MCP
+Primary tool for codebase analysis:
+- `search_for_pattern` - Find similar implementations
+- `get_symbols_overview` - Understand file structure
+- `find_symbol` - Locate specific components or utilities
+- `find_referencing_symbols` - Understand component usage
+
+### Context7 MCP
+Fetch current documentation:
+- Resolve library names with `resolve-library-id`
+- Get latest docs with `get-library-docs`
+- Focus on Next.js, React, Tailwind, and specific libraries
+
+### Chrome DevTools MCP
+Visual verification and debugging:
+- Navigate and take screenshots for comparison
+- List console messages to find errors
+- Check network requests for API issues
+- Test responsive behavior with resize
+- Verify interactive elements with click/hover/fill
+- Use snapshots for accessibility tree analysis
+
+## Best Practices
+
+### Code Quality
+- Write clean, readable, maintainable code
+- Use meaningful variable and function names
+- Keep components small and focused
+- Extract reusable logic into custom hooks
+- Add JSDoc comments for complex functions
+- Use TypeScript for type safety
+
+### Performance
+- Lazy load images with Next.js Image component
+- Code split large components with dynamic imports
+- Memoize expensive computations with useMemo
+- Debounce/throttle frequent operations
+- Minimize bundle size and eliminate unused code
+
+### Accessibility
+- Use semantic HTML elements
+- Include ARIA labels and roles where needed
+- Ensure keyboard navigation works
+- Maintain proper heading hierarchy
+- Provide alternative text for images
+- Ensure sufficient color contrast
+
+### Maintainability
+- Follow existing project patterns and conventions
+- Keep business logic separate from UI components
+- Use composition over inheritance
+- Write self-documenting code
+- Keep dependencies up to date
+
+## Project-Specific Conventions
+
+For Traya Health codebase:
+
+### File Organization
+- Pages: `app/[route]/page.tsx`
+- Components: `components/[component-name]/index.tsx`
+- Contexts: `context/[context-name].js`
+- Helpers: `helpers/[helper-name].js`
+- Constants: `constants/[constant-type].js`
+
+### Styling
+- Use Tailwind utilities first
+- Reference custom theme (male/female color palettes)
+- Follow responsive design patterns
+- Use custom animations and gradients from config
+
+### State Management
+- Use Context API for global state
+- Available contexts: cart-store, questions-store, CustomerDataContext, AnalyticsContext
+- Follow existing context patterns
+
+### API Integration
+- Use `fetchRequest` helper for all API calls
+- Reference URLs from `constants/urls.js`
+- Handle errors consistently
+- Include loading states
+
+### Forms
+- Follow questionnaire system patterns
+- Include validation
+- Handle image uploads properly
+- Integrate with analytics tracking
+
+## Common Scenarios
+
+### Creating a New Page
+1. Analyze Figma design for the page
+2. Check existing page patterns in `app/` directory
+3. Determine SSR/CSR/SSG based on data requirements
+4. Create page file with proper routing
+5. Implement with verification loop
+6. Test navigation and integration
+
+### Creating a Reusable Component
+1. Extract design specs from Figma
+2. Check for similar components in `components/`
+3. Identify reusability patterns
+4. Create component with proper props interface
+5. Test in isolation and in context
+6. Document usage
+
+### Implementing a Form
+1. Review form flow requirements
+2. Check existing form patterns in codebase
+3. Integrate with questions-store context
+4. Implement validation
+5. Wire up API submission
+6. Add analytics tracking
+7. Test complete flow with Chrome DevTools
+
+### Adding Responsive Behavior
+1. Extract responsive specs from Figma
+2. Identify breakpoints from Tailwind config
+3. Implement mobile-first approach
+4. Test at all breakpoints with Chrome DevTools
+5. Verify touch interactions on mobile viewports
+
+## Troubleshooting
+
+### Visual Differences from Design
+- Use screenshot comparison to identify exact differences
+- Check Tailwind config for custom values
+- Verify fonts are loaded correctly
+- Check for CSS conflicts or specificity issues
+
+### Console Errors
+- Use Chrome DevTools to list and analyze errors
+- Check network requests for failed API calls
+- Verify environment variables are set
+- Check for missing dependencies
+
+### Performance Issues
+- Check bundle size with `ANALYZE=true npm run build`
+- Look for unnecessary re-renders with React DevTools
+- Verify images are optimized
+- Check for blocking operations
+
+### Context Integration Issues
+- Verify provider wraps component properly
+- Check context is imported correctly
+- Ensure context values are accessed properly
+- Test with and without context data
+
+## Completion Criteria
+
+The UI development task is complete when:
+1. Implementation visually matches Figma design pixel-perfectly at all breakpoints
+2. All interactive elements function as designed
+3. No console errors or warnings present
+4. All network requests succeed
+5. Code follows project best practices and conventions
+6. Component is properly integrated with existing systems
+7. Documentation is complete
+8. Ready for code review and testing skills
