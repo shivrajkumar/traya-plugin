@@ -279,7 +279,34 @@ cat plugins/traya/.mcp.json | jq .
 1. Create `plugins/traya/skills/new-skill.md`
 2. Update plugin.json skill count
 3. Update README.md skill list
-4. Test with `claude /skill new-skill`
+4. Consider integrating into `/traya:work` command if it fits the workflow
+5. Test with `claude /skill new-skill` or through `/traya:work` integration
+
+### How Skill Integration Works
+
+Skills are automatically invoked by the `/traya:work` command based on task detection:
+
+**Architecture:**
+```
+/traya:work command
+    ↓
+Analyzes work document
+    ↓
+Detects task type (UI development, API integration, other)
+    ↓
+Invokes appropriate skills automatically:
+    - UI tasks: ui-developer → api-integrator → ui-tester → code-reviewer
+    - API tasks: api-integrator → ui-tester → code-reviewer
+    - Other: Manual execution loop
+```
+
+**Implementation Location:**
+- Skills are defined in `plugins/traya/skills/*.md`
+- Integration logic is in `plugins/traya/commands/work.md` Phase 3
+- Skills leverage bundled MCP servers automatically
+
+**Key Benefit:**
+Users only run `/traya:plan` → `/traya:work` → `/traya:review` for complete workflow. Skills are invoked automatically based on context, providing comprehensive quality assurance with iterative workflows.
 
 ### Updating Tags/Keywords
 

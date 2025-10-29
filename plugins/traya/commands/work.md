@@ -4,6 +4,8 @@
 
 This command helps you analyze a work document (plan, Markdown file, specification, or any structured document), create a comprehensive todo list using the TodoWrite tool, and then systematically execute each task until the entire plan is completed. It combines deep analysis with practical execution to transform plans into reality.
 
+**Skill-Based Execution**: The command automatically detects task types (UI development, API integration) and invokes appropriate skills (ui-developer, api-integrator, ui-tester, code-reviewer) for comprehensive, iterative workflows with built-in quality assurance. This leverages all bundled MCP servers (Figma, Postman, Chrome DevTools, Context7, Serena) to ensure production-ready results.
+
 ## Prerequisites
 
 - A work document to analyze (plan file, specification, or any structured document)
@@ -11,6 +13,12 @@ This command helps you analyze a work document (plan, Markdown file, specificati
 - Access to necessary tools and permissions for implementation
 - Ability to test and validate completed work
 - Git repository with main branch
+- **Bundled MCP servers** (automatically configured with plugin):
+  - Figma MCP (for ui-developer skill - requires Figma Desktop App)
+  - Postman MCP (for api-integrator skill)
+  - Chrome DevTools MCP (for ui-developer, api-integrator, ui-tester skills)
+  - Context7 MCP (for documentation and best practices)
+  - Serena MCP (for codebase pattern analysis)
 
 ## Main Tasks
 
@@ -100,7 +108,82 @@ This command helps you analyze a work document (plan, Markdown file, specificati
 
 ### Phase 3: Systematic Execution
 
-1. **Task Execution Loop**
+1. **Detect Task Type and Invoke Skills**
+
+   Analyze the work document and todo list to determine the task type, then automatically invoke appropriate skills for comprehensive execution:
+
+   **A. For UI Development Tasks**
+
+   If the work involves building UI components from Figma designs or creating new pages/components:
+
+   ```
+   1. Invoke ui-developer skill
+      - Extract design specifications from Figma (Figma MCP)
+      - Analyze existing codebase patterns (Serena MCP)
+      - Fetch library documentation (Context7 MCP)
+      - Implement component with TypeScript + Tailwind
+      - Visual verification loop with Chrome DevTools
+      - Iterate until pixel-perfect match
+
+   2. If backend APIs needed → Invoke api-integrator skill
+      - Test APIs with Postman (Postman MCP)
+      - Set up API client with interceptors
+      - Implement authentication integration
+      - Connect APIs to UI components
+      - Add loading and error states
+      - Integration testing with Chrome DevTools
+      - Security audit
+
+   3. Invoke ui-tester skill
+      - Functional testing (all interactive elements)
+      - Error detection and analysis
+      - Responsive and visual testing
+      - Accessibility validation (WCAG compliance)
+      - Performance testing (Core Web Vitals)
+      - Issue documentation and fixing
+      - Final validation
+
+   4. Invoke code-reviewer skill
+      - Task completion verification
+      - Technical quality review
+      - Best practices validation (Context7 MCP)
+      - Code structure and organization review
+      - Performance, security, accessibility checks
+      - Project conventions compliance
+   ```
+
+   **B. For API Integration Tasks**
+
+   If the work focuses primarily on connecting backend APIs:
+
+   ```
+   1. Invoke api-integrator skill
+      - API discovery and planning (Serena MCP for patterns)
+      - Comprehensive API testing with Postman MCP
+      - Frontend integration (authentication, data fetching)
+      - Integration testing with Chrome DevTools MCP
+      - Performance optimization
+      - Security audit
+      - Documentation
+
+   2. Invoke ui-tester skill
+      - Test complete data flow from API to UI
+      - Network monitoring and validation
+      - Error scenario testing
+      - Performance validation
+
+   3. Invoke code-reviewer skill
+      - Integration quality review
+      - Security validation
+      - Performance check
+      - Best practices compliance
+   ```
+
+   **C. For Other Tasks**
+
+   If the work doesn't fit UI development or API integration patterns, fall back to manual execution with the task loop below.
+
+2. **Task Execution Loop** (Fallback for non-UI/API tasks)
 
    ```
    while (tasks remain):
@@ -112,19 +195,21 @@ This command helps you analyze a work document (plan, Markdown file, specificati
      - Update progress
    ```
 
-2. **Quality Assurance**
+3. **Quality Assurance**
 
-   - Run tests after each task
+   - Run tests after each task (lint, typecheck, unit tests)
    - Execute lint and typecheck commands
    - Verify no regressions
    - Check against acceptance criteria
    - Document any issues found
+   - Ensure all MCP-based validations passed (if skills were used)
 
-3. **Progress Tracking**
+4. **Progress Tracking**
    - Regularly update task status
    - Note any blockers or delays
    - Create new tasks for discoveries
    - Maintain work visibility
+   - Document skill execution results
 
 ### Phase 4: Completion and Submission
 

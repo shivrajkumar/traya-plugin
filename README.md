@@ -281,7 +281,7 @@ API design, testing, and validation.
 
 ## All Skills
 
-The plugin includes 4 specialized skills for complete workflows:
+The plugin includes 4 specialized skills for complete workflows. **These skills are automatically invoked by `/traya:work` based on task detection** - you don't need to call them manually.
 
 ### UI Development & Testing
 - **ui-developer:** Complete Figma-to-Next.js workflow with iterative design-matching and visual validation
@@ -291,22 +291,21 @@ The plugin includes 4 specialized skills for complete workflows:
 ### API Integration
 - **api-integrator:** Complete API integration workflow from testing to production with Postman MCP validation, Chrome DevTools monitoring, and security audit
 
+**How Skills Work**: When you run `/traya:work`, the command analyzes your plan and automatically invokes the appropriate skills. For UI tasks, it runs ui-developer → api-integrator (if needed) → ui-tester → code-reviewer. For API tasks, it runs api-integrator → ui-tester → code-reviewer. All skills leverage bundled MCP servers (Figma, Postman, Chrome DevTools, Context7, Serena) for comprehensive, production-ready results.
+
 ## Getting Started
 
 1. Install the plugin using one of the methods above
 2. The bundled MCP servers will start automatically (no setup needed!)
 3. (Optional) For Serena: Run `uvx --from git+https://github.com/oraios/serena serena project index` to index your project
-4. Run `/traya:plan` on your next feature idea
-5. Use `/traya:work` to execute the plan
-6. Use `ui-developer` skill for Figma-to-code implementation
-7. Use `api-integrator` skill to connect backend APIs to your UI
-8. Use `ui-tester` skill to test and debug the complete implementation
-9. Use `code-reviewer` skill for final quality review
-10. Run `/traya:review` before merging
-11. Repeat, and watch your development process compound
+4. Run `/traya:plan` on your next feature idea to create a detailed implementation plan
+5. Run `/traya:work` to execute the plan
+   - **Skills automatically invoked**: `/traya:work` detects task types and automatically invokes appropriate skills (ui-developer, api-integrator, ui-tester, code-reviewer) with comprehensive MCP-powered workflows
+6. Run `/traya:review` before merging for multi-agent code review
+7. Repeat, and watch your development process compound
 
 Each cycle makes the next cycle easier. That's compounding engineering.
 
 ## Learn More
 
-Learn more about compounding engineering and how it transforms development workflows at [the project repository](https://github.com/shivrajkumar/traya-marketplace).
+Learn more about compounding engineering and how it transforms development workflows at [Read Full Story](https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it).
