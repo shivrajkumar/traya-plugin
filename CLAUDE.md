@@ -14,7 +14,7 @@ traya-marketplace/
         │   └── plugin.json        # Plugin metadata
         ├── agents/                # 16 specialized AI agents
         ├── commands/              # 6 slash commands
-        ├── skills/                # 3 specialized skills
+        ├── skills/                # 4 specialized skills
         ├── .mcp.json              # 5 bundled MCP servers
         └── README.md              # Plugin documentation
 ```
@@ -124,7 +124,7 @@ Each plugin has its own plugin.json with detailed metadata:
   "components": {
     "agents": 16,
     "commands": 6,
-    "skills": 3
+    "skills": 4
   },
   "agents": {
     "category": [

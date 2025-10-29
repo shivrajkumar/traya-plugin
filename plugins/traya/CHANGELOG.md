@@ -42,11 +42,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `traya-style-editor` - Writing style guide enforcer
   - `feedback-codifier` - Feedback task converter
 
-#### Skills (3 total)
+#### Skills (4 total)
 - **UI Development & Testing**
   - `ui-developer` - Complete Figma-to-Next.js workflow with iterative design-matching
   - `ui-tester` - Comprehensive UI testing and debugging with Chrome DevTools
   - `code-reviewer` - Dual-layer code review (task completion + technical quality)
+- **API Integration**
+  - `api-integrator` - Complete API integration workflow with Postman testing, Chrome DevTools monitoring, and security audit
 
 #### Commands (24 total)
 - **Review Commands**

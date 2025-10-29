@@ -1,6 +1,6 @@
-# TrayaHealth Marketplace
+# TrayaHealth Claude Code Plugin Marketplace
 
-The official TrayaHealth marketplace where engineers from TrayaHealth share their workflows. Currently featuring the Compounding Engineering Philosophy plugin.
+The official Traya Health claude code plugin marketplace where engineers from Traya Health share their workflows. Currently featuring the Compounding Engineering Philosophy plugin.
 
 ## Quick Start
 
@@ -105,14 +105,14 @@ Use `/traya:review` to perform exhaustive multi-agent code reviews.
 
 ```bash
 # Create a detailed GitHub issue from a feature description
-claude /traya:plan "Add user profile avatars with S3 upload and automatic resizing"
+claude /traya:plan "Add interactive product gallery with filters, search, and image carousel"
 ```
 
 The command will:
-1. Research how your codebase handles file uploads
-2. Find similar features in your repository
-3. Check framework documentation for best practices
-4. Generate a complete issue with acceptance criteria, technical approach, and code examples
+1. Research how your codebase handles filtering and search
+2. Find similar UI patterns in your repository
+3. Check framework documentation for React/Next.js best practices
+4. Generate a complete issue with acceptance criteria, component structure, and code examples
 
 You can choose detail levels:
 - **Minimal:** Quick issues for simple features
@@ -281,12 +281,15 @@ API design, testing, and validation.
 
 ## All Skills
 
-The plugin includes 3 specialized skills for complete workflows:
+The plugin includes 4 specialized skills for complete workflows:
 
 ### UI Development & Testing
 - **ui-developer:** Complete Figma-to-Next.js workflow with iterative design-matching and visual validation
 - **ui-tester:** Comprehensive UI testing and debugging with Chrome DevTools integration
 - **code-reviewer:** Dual-layer code review (task completion + technical quality) with production approval
+
+### API Integration
+- **api-integrator:** Complete API integration workflow from testing to production with Postman MCP validation, Chrome DevTools monitoring, and security audit
 
 ## Getting Started
 
@@ -296,10 +299,11 @@ The plugin includes 3 specialized skills for complete workflows:
 4. Run `/traya:plan` on your next feature idea
 5. Use `/traya:work` to execute the plan
 6. Use `ui-developer` skill for Figma-to-code implementation
-7. Use `ui-tester` skill to test and debug the implementation
-8. Use `code-reviewer` skill for final quality review
-9. Run `/traya:review` before merging
-10. Repeat, and watch your development process compound
+7. Use `api-integrator` skill to connect backend APIs to your UI
+8. Use `ui-tester` skill to test and debug the complete implementation
+9. Use `code-reviewer` skill for final quality review
+10. Run `/traya:review` before merging
+11. Repeat, and watch your development process compound
 
 Each cycle makes the next cycle easier. That's compounding engineering.
 
