@@ -1,0 +1,21 @@
+{
+  "name": "traya",
+  "version": "1.0.0",
+  "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 17 specialized agents and 6 commands.",
+  "author": {
+    "name": "Shivraj Kumar",
+    "email": "shivrajkumar@traya.health",
+    "url": "https://github.com/shivrajkumar"
+  },
+  "homepage": "https://github.com/shivrajkumar/traya-marketplace",
+  "repository": "https://github.com/shivrajkumar/traya-marketplace",
+  "license": "MIT",
+  "keywords": [
+    "ai-powered",
+    "traya",
+    "workflow-automation",
+    "code-review",
+    "quality",
+    "knowledge-management"
+  ]
+}
