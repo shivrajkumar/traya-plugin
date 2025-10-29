@@ -9,14 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-#### Enhanced `/traya:work` Command with Automatic Skill Integration
-- **Automatic Task Detection**: `/traya:work` now analyzes work documents to detect task types (UI development, API integration, etc.)
+#### Enhanced `/traya-compounding-engineering:work` Command with Automatic Skill Integration
+- **Automatic Task Detection**: `/traya-compounding-engineering:work` now analyzes work documents to detect task types (UI development, API integration, etc.)
 - **Skill Auto-Invocation**: Automatically invokes appropriate skills based on detected task type:
   - **UI Development tasks**: ui-developer → api-integrator (if needed) → ui-tester → code-reviewer
   - **API Integration tasks**: api-integrator → ui-tester → code-reviewer
   - **Other tasks**: Falls back to manual execution loop
 - **MCP Server Integration**: Skills leverage all bundled MCP servers (Figma, Postman, Chrome DevTools, Context7, Serena) automatically
-- **Simplified Workflow**: Users only need to run `/traya:plan` → `/traya:work` → `/traya:review` for complete development cycle
+- **Simplified Workflow**: Users only need to run `/traya-compounding-engineering:plan` → `/traya-compounding-engineering:work` → `/traya-compounding-engineering:review` for complete development cycle
 - **Quality Assurance**: Built-in iterative workflows with visual verification, testing, and code review
 - **Updated Documentation**: README now reflects simplified workflow without manual skill invocation
 

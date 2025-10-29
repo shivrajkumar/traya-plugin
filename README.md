@@ -14,7 +14,7 @@ Run Claude and add the marketplace:
 Then install the plugin:
 
 ```bash
-/plugin install traya
+/plugin install traya-compounding-engineering
 ```
 
 ### One-Command Installation
@@ -65,7 +65,7 @@ The plugin follows a three-step workflow that makes development compound:
 
 ### 1. Plan: Turn Ideas Into Structured Issues
 
-Use `/traya:plan` to transform feature descriptions into comprehensive GitHub issues.
+Use `/traya-compounding-engineering:plan` to transform feature descriptions into comprehensive GitHub issues.
 
 **What it does:**
 - Researches your codebase to find similar patterns and conventions
@@ -77,7 +77,7 @@ Use `/traya:plan` to transform feature descriptions into comprehensive GitHub is
 
 ### 2. Work: Execute Plans Systematically
 
-Use `/traya:work` to execute work plans with isolated worktrees and systematic task tracking.
+Use `/traya-compounding-engineering:work` to execute work plans with isolated worktrees and systematic task tracking.
 
 **What it does:**
 - Creates isolated git worktrees for clean development
@@ -89,7 +89,7 @@ Use `/traya:work` to execute work plans with isolated worktrees and systematic t
 
 ### 3. Review: Ensure Quality Before Merging
 
-Use `/traya:review` to perform exhaustive multi-agent code reviews.
+Use `/traya-compounding-engineering:review` to perform exhaustive multi-agent code reviews.
 
 **What it does:**
 - Checks out your PR in an isolated worktree for deep analysis
@@ -105,7 +105,7 @@ Use `/traya:review` to perform exhaustive multi-agent code reviews.
 
 ```bash
 # Create a detailed GitHub issue from a feature description
-claude /traya:plan "Add interactive product gallery with filters, search, and image carousel"
+claude /traya-compounding-engineering:plan "Add interactive product gallery with filters, search, and image carousel"
 ```
 
 The command will:
@@ -123,7 +123,7 @@ You can choose detail levels:
 
 ```bash
 # Execute a plan document systematically
-claude /traya:work path/to/plan.md
+claude /traya-compounding-engineering:work path/to/plan.md
 ```
 
 The command will:
@@ -137,13 +137,13 @@ The command will:
 
 ```bash
 # Review the latest PR
-claude /traya:review
+claude /traya-compounding-engineering:review
 
 # Review a specific PR
-claude /traya:review 123
+claude /traya-compounding-engineering:review 123
 
 # Review from a GitHub URL
-claude /traya:review https://github.com/user/repo/pull/123
+claude /traya-compounding-engineering:review https://github.com/user/repo/pull/123
 ```
 
 The command will:
@@ -161,22 +161,22 @@ The command will:
 
 The plugin includes six commands for different stages of development:
 
-### `/traya:plan [feature description]`
+### `/traya-compounding-engineering:plan [feature description]`
 Creates detailed GitHub issues from feature descriptions. Includes research, acceptance criteria, and implementation guidance.
 
-### `/traya:work [plan file]`
+### `/traya-compounding-engineering:work [plan file]`
 Executes work plans systematically with worktrees, todos, and continuous validation.
 
-### `/traya:review [PR number or URL]`
+### `/traya-compounding-engineering:review [PR number or URL]`
 Performs exhaustive multi-agent code reviews with security, performance, and architecture analysis.
 
-### `/traya:triage`
+### `/traya-compounding-engineering:triage`
 Presents findings one by one for review and converts approved items into trackable todos.
 
-### `/traya:resolve_todo_parallel`
+### `/traya-compounding-engineering:resolve_todo_parallel`
 Resolves multiple todos in parallel with systematic execution and quality checks.
 
-### `/traya:generate_command`
+### `/traya-compounding-engineering:generate_command`
 Generates new Claude Code commands from descriptions.
 
 ## All Agents
@@ -215,17 +215,17 @@ The plugin includes 16 specialized agents that provide expertise in different ar
 
 Traditional development tools help you work faster. Compounding engineering tools make future work easier.
 
-**Every `/traya:plan` you create:**
+**Every `/traya-compounding-engineering:plan` you create:**
 - Documents patterns that inform the next plan
 - Establishes conventions that reduce planning time
 - Builds institutional knowledge
 
-**Every `/traya:work` execution:**
+**Every `/traya-compounding-engineering:work` execution:**
 - Creates reusable components
 - Refines your testing approach
 - Improves your development process
 
-**Every `/traya:review` you run:**
+**Every `/traya-compounding-engineering:review` you run:**
 - Catches issues earlier
 - Documents learnings for the team
 - Raises the quality bar systematically
@@ -242,7 +242,7 @@ The plugin embodies these compounding engineering principles:
 
 **Quality compounds:** High-quality code is easier to modify. The multi-agent review system ensures every change meets your quality bar.
 
-**Systematic beats heroic:** Consistent processes beat individual heroics. The `/traya:work` command executes plans systematically, with continuous validation.
+**Systematic beats heroic:** Consistent processes beat individual heroics. The `/traya-compounding-engineering:work` command executes plans systematically, with continuous validation.
 
 **Knowledge should be codified:** Learnings should be captured and reused. The research agents analyze your codebase to apply your own patterns back to you.
 
@@ -291,17 +291,17 @@ The plugin includes 4 specialized skills for complete workflows. **These skills 
 ### API Integration
 - **api-integrator:** Complete API integration workflow from testing to production with Postman MCP validation, Chrome DevTools monitoring, and security audit
 
-**How Skills Work**: When you run `/traya:work`, the command analyzes your plan and automatically invokes the appropriate skills. For UI tasks, it runs ui-developer → api-integrator (if needed) → ui-tester → code-reviewer. For API tasks, it runs api-integrator → ui-tester → code-reviewer. All skills leverage bundled MCP servers (Figma, Postman, Chrome DevTools, Context7, Serena) for comprehensive, production-ready results.
+**How Skills Work**: When you run `/traya-compounding-engineering:work`, the command analyzes your plan and automatically invokes the appropriate skills. For UI tasks, it runs ui-developer → api-integrator (if needed) → ui-tester → code-reviewer. For API tasks, it runs api-integrator → ui-tester → code-reviewer. All skills leverage bundled MCP servers (Figma, Postman, Chrome DevTools, Context7, Serena) for comprehensive, production-ready results.
 
 ## Getting Started
 
 1. Install the plugin using one of the methods above
 2. The bundled MCP servers will start automatically (no setup needed!)
 3. (Optional) For Serena: Run `uvx --from git+https://github.com/oraios/serena serena project index` to index your project
-4. Run `/traya:plan` on your next feature idea to create a detailed implementation plan
-5. Run `/traya:work` to execute the plan
-   - **Skills automatically invoked**: `/traya:work` detects task types and automatically invokes appropriate skills (ui-developer, api-integrator, ui-tester, code-reviewer) with comprehensive MCP-powered workflows
-6. Run `/traya:review` before merging for multi-agent code review
+4. Run `/traya-compounding-engineering:plan` on your next feature idea to create a detailed implementation plan
+5. Run `/traya-compounding-engineering:work` to execute the plan
+   - **Skills automatically invoked**: `/traya-compounding-engineering:work` detects task types and automatically invokes appropriate skills (ui-developer, api-integrator, ui-tester, code-reviewer) with comprehensive MCP-powered workflows
+6. Run `/traya-compounding-engineering:review` before merging for multi-agent code review
 7. Repeat, and watch your development process compound
 
 Each cycle makes the next cycle easier. That's compounding engineering.

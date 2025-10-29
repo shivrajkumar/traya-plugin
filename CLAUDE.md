@@ -9,7 +9,7 @@ traya-plugin/
 ├── .claude-plugin/
 │   └── marketplace.json          # Marketplace catalog (lists available plugins)
 └── plugins/
-    └── traya/   # The actual plugin
+    └── traya-compounding-engineering/   # The actual plugin
         ├── .claude-plugin/
         │   └── plugin.json        # Plugin metadata
         ├── agents/                # 16 specialized AI agents
@@ -54,20 +54,20 @@ When agents or commands are added/removed:
 
    ```bash
    # Count agents
-   ls plugins/traya/agents/*.md | wc -l
+   ls plugins/traya-compounding-engineering/agents/*.md | wc -l
 
    # Count commands
-   ls plugins/traya/commands/*.md | wc -l
+   ls plugins/traya-compounding-engineering/commands/*.md | wc -l
    ```
 
-2. **Update plugin.json** at `plugins/traya/.claude-plugin/plugin.json`:
+2. **Update plugin.json** at `plugins/traya-compounding-engineering/.claude-plugin/plugin.json`:
 
    - Update `components.agents` count
    - Update `components.commands` count
    - Update `agents` object to reflect which agents exist
    - Update `commands` object to reflect which commands exist
 
-3. **Update plugin README** at `plugins/traya/README.md`:
+3. **Update plugin README** at `plugins/traya-compounding-engineering//README.md`:
 
    - Update agent/command counts in the intro
    - Update the agent/command lists to match what exists
@@ -244,7 +244,7 @@ To add a new MCP server to the plugin:
 
 5. Test agents and commands:
    ```bash
-   claude /traya:review
+   claude /traya-compounding-engineering/:review
    claude agent typescript-reviewer "test message"
    ```
 
@@ -254,41 +254,41 @@ Before committing, ensure JSON files are valid:
 
 ```bash
 cat .claude-plugin/marketplace.json | jq .
-cat plugins/traya/.claude-plugin/plugin.json | jq .
-cat plugins/traya/.mcp.json | jq .
+cat plugins/traya-compounding-engineering//.claude-plugin/plugin.json | jq .
+cat plugins/traya-compounding-engineering//.mcp.json | jq .
 ```
 
 ## Common Tasks
 
 ### Adding a New Agent
 
-1. Create `plugins/traya/agents/new-agent.md`
+1. Create `plugins/traya-compounding-engineering//agents/new-agent.md`
 2. Update plugin.json agent count and agent list
 3. Update README.md agent list
 4. Test with `claude agent new-agent "test"`
 
 ### Adding a New Command
 
-1. Create `plugins/traya/commands/new-command.md`
+1. Create `plugins/traya-compounding-engineering//commands/new-command.md`
 2. Update plugin.json command count and command list
 3. Update README.md command list
 4. Test with `claude /new-command`
 
 ### Adding a New Skill
 
-1. Create `plugins/traya/skills/new-skill.md`
+1. Create `plugins/traya-compounding-engineering//skills/new-skill.md`
 2. Update plugin.json skill count
 3. Update README.md skill list
-4. Consider integrating into `/traya:work` command if it fits the workflow
-5. Test with `claude /skill new-skill` or through `/traya:work` integration
+4. Consider integrating into `/traya-compounding-engineering/:work` command if it fits the workflow
+5. Test with `claude /skill new-skill` or through `/traya-compounding-engineering/:work` integration
 
 ### How Skill Integration Works
 
-Skills are automatically invoked by the `/traya:work` command based on task detection:
+Skills are automatically invoked by the `/traya-compounding-engineering/:work` command based on task detection:
 
 **Architecture:**
 ```
-/traya:work command
+/traya-compounding-engineering/:work command
     ↓
 Analyzes work document
     ↓
@@ -301,18 +301,18 @@ Invokes appropriate skills automatically:
 ```
 
 **Implementation Location:**
-- Skills are defined in `plugins/traya/skills/*.md`
-- Integration logic is in `plugins/traya/commands/work.md` Phase 3
+- Skills are defined in `plugins/traya-compounding-engineering//skills/*.md`
+- Integration logic is in `plugins/traya-compounding-engineering//commands/work.md` Phase 3
 - Skills leverage bundled MCP servers automatically
 
 **Key Benefit:**
-Users only run `/traya:plan` → `/traya:work` → `/traya:review` for complete workflow. Skills are invoked automatically based on context, providing comprehensive quality assurance with iterative workflows.
+Users only run `/traya-compounding-engineering/:plan` → `/traya-compounding-engineering/:work` → `/traya-compounding-engineering/:review` for complete workflow. Skills are invoked automatically based on context, providing comprehensive quality assurance with iterative workflows.
 
 ### Updating Tags/Keywords
 
 Tags should reflect the compounding engineering philosophy and target technologies:
 
-- Use: `ai-powered`, `traya`, `react`, `nextjs`, `typescript`, `workflow-automation`, `knowledge-management`
+- Use: `ai-powered`, `traya-compounding-engineering/`, `react`, `nextjs`, `typescript`, `workflow-automation`, `knowledge-management`
 - Framework-specific tags are encouraged since this plugin is optimized for React/Next.js
 
 ## Commit Conventions
