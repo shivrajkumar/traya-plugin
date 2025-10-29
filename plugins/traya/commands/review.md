@@ -57,20 +57,11 @@ This will inform which language-specific reviewers to use.
 
 Check for these indicators to determine project type:
 
-**Rails Project**:
-- `Gemfile` with `rails` gem
-- `config/application.rb`
-- `app/` directory structure
-
-**TypeScript Project**:
+**TypeScript/React/Next.js Project**:
 - `tsconfig.json`
-- `package.json` with TypeScript dependencies
-- `.ts` or `.tsx` files
-
-**Python Project**:
-- `requirements.txt` or `pyproject.toml`
-- `.py` files
-- `setup.py` or `poetry.lock`
+- `package.json` with TypeScript, React, or Next.js dependencies
+- `.ts`, `.tsx`, `.jsx` files
+- `next.config.js` or `next.config.ts` (for Next.js)
 
 Based on detection, set appropriate reviewers for parallel execution.
 
@@ -84,27 +75,15 @@ Run ALL or most of these agents at the same time, adjusting language-specific re
 
 **Language-Specific Reviewers (choose based on project type)**:
 
-For Rails projects:
-1. Task shivraj-rails-reviewer(PR content)
-2. Task dhh-rails-reviewer(PR title)
-3. If turbo is used: Task rails-turbo-expert(PR content)
-
-For TypeScript projects:
-1. Task shivraj-typescript-reviewer(PR content)
-
-For Python projects:
-1. Task shivraj-python-reviewer(PR content)
+For TypeScript/React/Next.js projects:
+1. Task typescript-reviewer(PR content)
 
 **Universal Reviewers (run for all project types)**:
-4. Task git-history-analyzer(PR content)
-5. Task dependency-detective(PR content)
-6. Task pattern-recognition-specialist(PR content)
-7. Task architecture-strategist(PR content)
-8. Task code-philosopher(PR content)
-9. Task security-sentinel(PR content)
-10. Task performance-oracle(PR content)
-11. Task devops-harmony-analyst(PR content)
-12. Task data-integrity-guardian(PR content)
+2. Task git-history-analyzer(PR content)
+3. Task pattern-recognition-specialist(PR content)
+4. Task architecture-strategist(PR content)
+5. Task security-sentinel(PR content)
+6. Task performance-oracle(PR content)
 
 </parallel_tasks>
 

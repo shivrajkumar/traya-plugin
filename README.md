@@ -30,7 +30,7 @@ This automatically adds the marketplace and installs the plugin in a single step
 
 # Compounding Engineering Plugin
 
-A Claude Code plugin that makes each unit of engineering work easier than the last. Transform how you plan, build, and review code using AI-powered tools that systematically improve your development workflow.
+A Claude Code plugin for React and Next.js development that makes each unit of engineering work easier than the last. Transform how you plan, build, and review code using AI-powered tools that systematically improve your development workflow.
 
 ## What Is Compounding Engineering?
 
@@ -148,12 +148,12 @@ claude /traya:review https://github.com/user/repo/pull/123
 
 The command will:
 1. Check out the PR in an isolated worktree
-2. Run 12+ specialized review agents in parallel:
-   - Language-specific reviewers (Rails, TypeScript, Python)
+2. Run specialized review agents in parallel:
+   - TypeScript reviewer for code quality and type safety
    - Security sentinel for vulnerability scanning
    - Performance oracle for optimization opportunities
    - Architecture strategist for design review
-   - Data integrity guardian for database concerns
+   - Pattern recognition specialist for code patterns
 3. Present findings one by one for triage
 4. Create todos for approved findings
 
@@ -181,19 +181,15 @@ Generates new Claude Code commands from descriptions.
 
 ## All Agents
 
-The plugin includes 17 specialized agents that provide expertise in different areas:
+The plugin includes 13 specialized agents that provide expertise in different areas:
 
 ### Code Review Specialists
-- **shivraj-rails-reviewer:** Strict Rails code review with focus on conventions and simplicity
-- **shivraj-typescript-reviewer:** TypeScript code review with type safety and best practices
-- **shivraj-python-reviewer:** Python code review with focus on clarity and conventions
-- **dhh-rails-reviewer:** Rails review from DHH's philosophy of simplicity
+- **typescript-reviewer:** TypeScript code review with type safety and best practices
 - **code-simplicity-reviewer:** Identifies opportunities to simplify complex code
 
 ### Quality Guardians
 - **security-sentinel:** Comprehensive security audits and vulnerability detection
 - **performance-oracle:** Performance analysis and optimization recommendations
-- **data-integrity-guardian:** Database design review and data consistency checks
 
 ### Architecture & Patterns
 - **architecture-strategist:** System design review and architectural guidance

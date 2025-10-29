@@ -1,6 +1,6 @@
 # TrayaHealth Marketplace - Claude Code Plugin Marketplace
 
-This repository is a Claude Code plugin marketplace that distributes the `traya` plugin to developers building with AI-powered tools.
+This repository is a Claude Code plugin marketplace that distributes the `traya` plugin to developers building React and Next.js applications with AI-powered tools.
 
 ## Repository Structure
 
@@ -12,9 +12,9 @@ traya-marketplace/
     └── traya/   # The actual plugin
         ├── .claude-plugin/
         │   └── plugin.json        # Plugin metadata
-        ├── agents/                # 17 specialized AI agents
+        ├── agents/                # 13 specialized AI agents
         ├── commands/              # 6 slash commands
-        ├── hooks/                 # 2 automated hooks
+        ├── .mcp.json              # 5 bundled MCP servers
         └── README.md              # Plugin documentation
 ```
 
@@ -45,7 +45,7 @@ When working on this repository, follow the compounding engineering process:
 3. Update `.claude-plugin/marketplace.json` to include the new plugin
 4. Test locally before committing
 
-### Updating the Compounding Engineering Plugin
+### Updating the Traya Plugin
 
 When agents or commands are added/removed:
 
@@ -121,9 +121,8 @@ Each plugin has its own plugin.json with detailed metadata:
   "author": { ... },
   "keywords": ["keyword1", "keyword2"],
   "components": {
-    "agents": 15,
-    "commands": 6,
-    "hooks": 2
+    "agents": 13,
+    "commands": 6
   },
   "agents": {
     "category": [
@@ -243,8 +242,8 @@ To add a new MCP server to the plugin:
 
 5. Test agents and commands:
    ```bash
-   claude /review
-   claude agent shivraj-rails-reviewer "test message"
+   claude /traya:review
+   claude agent typescript-reviewer "test message"
    ```
 
 ### Validate JSON
@@ -275,10 +274,10 @@ cat plugins/traya/.mcp.json | jq .
 
 ### Updating Tags/Keywords
 
-Tags should reflect the compounding engineering philosophy:
+Tags should reflect the compounding engineering philosophy and target technologies:
 
-- Use: `ai-powered`, `traya`, `workflow-automation`, `knowledge-management`
-- Avoid: Framework-specific tags unless the plugin is framework-specific
+- Use: `ai-powered`, `traya`, `react`, `nextjs`, `typescript`, `workflow-automation`, `knowledge-management`
+- Framework-specific tags are encouraged since this plugin is optimized for React/Next.js
 
 ## Commit Conventions
 
