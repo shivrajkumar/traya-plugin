@@ -8,7 +8,7 @@ The official Traya Health claude code plugin marketplace where engineers from Tr
 Run Claude and add the marketplace:
 
 ```bash
-/plugin marketplace add https://github.com/shivrajkumar/traya-marketplace
+/plugin marketplace add https://github.com/shivrajkumar/traya-plugin
 ```
 
 Then install the plugin:
@@ -21,7 +21,7 @@ Then install the plugin:
 Use the [Claude Plugins CLI](https://claude-plugins.dev) to skip the marketplace setup:
 
 ```bash
-npx claude-plugins install @shivrajkumar/traya-marketplace/traya
+npx claude-plugins install @shivrajkumar/traya-plugin/traya
 ```
 
 This automatically adds the marketplace and installs the plugin in a single step.

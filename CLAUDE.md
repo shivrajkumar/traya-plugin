@@ -5,7 +5,7 @@ This repository is a Claude Code plugin marketplace that distributes the `traya`
 ## Repository Structure
 
 ```
-traya-marketplace/
+traya-plugin/
 ├── .claude-plugin/
 │   └── marketplace.json          # Marketplace catalog (lists available plugins)
 └── plugins/
@@ -226,7 +226,7 @@ To add a new MCP server to the plugin:
 1. Install the marketplace locally:
 
    ```bash
-   claude /plugin marketplace add /Users/yourusername/traya-marketplace
+   claude /plugin marketplace add /Users/yourusername/traya-plugin
    ```
 
 2. Install the plugin:

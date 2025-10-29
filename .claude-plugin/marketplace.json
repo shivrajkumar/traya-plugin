@@ -1,5 +1,5 @@
 {
-  "name": "traya-marketplace",
+  "name": "traya-plugin",
   "owner": {
     "name": "TrayaHealth",
     "url": "https://github.com/shivrajkumar"
@@ -11,15 +11,15 @@
   "plugins": [
     {
       "name": "traya",
-      "description": "AI-powered development tools that get smarter with each use. Make each unit of engineering work easier than the last. Includes 17 specialized agents and 6 commands.",
+      "description": "AI-powered development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 16 specialized agents, 6 commands, and 4 skills.",
       "version": "1.0.0",
       "author": {
         "name": "Shivraj Kumar",
         "url": "https://github.com/shivrajkumar",
         "email": "shivrajkumar@traya.health"
       },
-      "homepage": "https://github.com/shivrajkumar/traya-marketplace",
-      "tags": ["ai-powered", "traya", "workflow-automation", "code-review", "quality", "knowledge-management"],
+      "homepage": "https://github.com/shivrajkumar/traya-plugin",
+      "tags": ["ai-powered", "traya", "react", "nextjs", "typescript", "workflow-automation", "code-review", "quality", "knowledge-management"],
       "source": "./plugins/traya"
     }
   ]

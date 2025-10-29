@@ -136,5 +136,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/shivrajkumar/traya-marketplace/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/shivrajkumar/traya-marketplace/releases/tag/v1.0.0
+[Unreleased]: https://github.com/shivrajkumar/traya-plugin/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/shivrajkumar/traya-plugin/releases/tag/v1.0.0
