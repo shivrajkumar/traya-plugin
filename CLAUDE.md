@@ -12,8 +12,9 @@ traya-marketplace/
     └── traya/   # The actual plugin
         ├── .claude-plugin/
         │   └── plugin.json        # Plugin metadata
-        ├── agents/                # 13 specialized AI agents
+        ├── agents/                # 16 specialized AI agents
         ├── commands/              # 6 slash commands
+        ├── skills/                # 1 specialized skill
         ├── .mcp.json              # 5 bundled MCP servers
         └── README.md              # Plugin documentation
 ```
@@ -121,8 +122,9 @@ Each plugin has its own plugin.json with detailed metadata:
   "author": { ... },
   "keywords": ["keyword1", "keyword2"],
   "components": {
-    "agents": 13,
-    "commands": 6
+    "agents": 16,
+    "commands": 6,
+    "skills": 1
   },
   "agents": {
     "category": [
@@ -271,6 +273,13 @@ cat plugins/traya/.mcp.json | jq .
 2. Update plugin.json command count and command list
 3. Update README.md command list
 4. Test with `claude /new-command`
+
+### Adding a New Skill
+
+1. Create `plugins/traya/skills/new-skill.md`
+2. Update plugin.json skill count
+3. Update README.md skill list
+4. Test with `claude /skill new-skill`
 
 ### Updating Tags/Keywords
 

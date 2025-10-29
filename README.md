@@ -181,7 +181,12 @@ Generates new Claude Code commands from descriptions.
 
 ## All Agents
 
-The plugin includes 13 specialized agents that provide expertise in different areas:
+The plugin includes 16 specialized agents that provide expertise in different areas:
+
+### Development & Implementation
+- **frontend-developer:** React/Next.js implementation with TypeScript and Tailwind CSS
+- **ui-ux-designer:** Design-to-code implementation, accessibility, and responsive design
+- **test-automator:** Test automation with Jest, Vitest, Playwright, and Chrome DevTools
 
 ### Code Review Specialists
 - **typescript-reviewer:** TypeScript code review with type safety and best practices
@@ -274,6 +279,13 @@ API design, testing, and validation.
 
 **Integration**: These MCP servers are configured in `.mcp.json` and start automatically when you enable the Traya plugin. No manual installation required - they integrate seamlessly with Claude's existing tools.
 
+## All Skills
+
+The plugin includes 1 specialized skill for complete workflows:
+
+### UI Development
+- **ui-developer:** Complete Figma-to-Next.js workflow with automated visual validation using Chrome DevTools
+
 ## Getting Started
 
 1. Install the plugin using one of the methods above
@@ -281,8 +293,9 @@ API design, testing, and validation.
 3. (Optional) For Serena: Run `uvx --from git+https://github.com/oraios/serena serena project index` to index your project
 4. Run `/traya:plan` on your next feature idea
 5. Use `/traya:work` to execute the plan
-6. Run `/traya:review` before merging
-7. Repeat, and watch your development process compound
+6. Use `ui-developer` skill for Figma-to-code implementation
+7. Run `/traya:review` before merging
+8. Repeat, and watch your development process compound
 
 Each cycle makes the next cycle easier. That's compounding engineering.
 

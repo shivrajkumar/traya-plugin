@@ -11,7 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-#### Agents (13 total)
+#### Agents (16 total)
+- **Development & Implementation**
+  - `frontend-developer` - React/Next.js implementation with TypeScript and Tailwind CSS
+  - `ui-ux-designer` - Design-to-code implementation, accessibility, and responsive design
+  - `test-automator` - Test automation with Jest, Vitest, Playwright, and Chrome DevTools
+
 - **Code Reviewers**
   - `typescript-reviewer` - TypeScript/React/Next.js code reviewer with high quality bar
   - `code-simplicity-reviewer` - Simplicity and maintainability reviewer
@@ -36,6 +41,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Specialized Agents**
   - `traya-style-editor` - Writing style guide enforcer
   - `feedback-codifier` - Feedback task converter
+
+#### Skills (1 total)
+- **UI Development**
+  - `ui-developer` - Complete Figma-to-Next.js workflow with automated visual validation
 
 #### Commands (24 total)
 - **Review Commands**

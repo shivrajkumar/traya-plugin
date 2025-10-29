@@ -1,7 +1,7 @@
 {
   "name": "traya",
   "version": "1.0.0",
-  "description": "AI-powered development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 13 specialized agents and 6 commands.",
+  "description": "AI-powered development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 16 specialized agents, 6 commands, and 1 skill.",
   "author": {
     "name": "Shivraj Kumar",
     "email": "shivrajkumar@traya.health",
@@ -16,6 +16,9 @@
     "react",
     "nextjs",
     "typescript",
+    "figma",
+    "testing",
+    "ui-development",
     "workflow-automation",
     "code-review",
     "quality",
