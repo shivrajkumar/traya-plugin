@@ -140,6 +140,62 @@ Each plugin has its own plugin.json with detailed metadata:
 }
 ```
 
+## MCP Servers Configuration
+
+The Traya plugin includes 5 integrated MCP servers in `plugin.json`:
+
+1. **Figma** - Design extraction and code generation
+2. **Chrome DevTools** - Browser automation and testing
+3. **Context7** - Library documentation access
+4. **Serena** - Semantic code analysis
+5. **Postman** - API testing and validation
+
+### Adding New MCP Servers
+
+To add a new MCP server to the plugin:
+
+1. Edit `plugins/traya/.claude-plugin/plugin.json`
+2. Add new server to the `mcpServers` array:
+   ```json
+   {
+     "id": "server-id",
+     "name": "Server Name",
+     "description": "What this server does",
+     "install": {
+       "type": "npm|python|desktop-app",
+       "command": "installation command",
+       "verify": "verification command"
+     },
+     "capabilities": ["capability1", "capability2"],
+     "required": true
+   }
+   ```
+3. Update README.md with server documentation
+4. Test the installation command
+
+### MCP Server Installation Commands
+
+```bash
+# Chrome DevTools
+claude mcp add chrome-devtools -- npx @executeautomation/chrome-devtools-mcp
+
+# Context7
+claude mcp add context7 -- npx -y @upstash/context7-mcp
+
+# Serena
+claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant --project $(pwd)
+uvx --from git+https://github.com/oraios/serena serena project index
+
+# Postman
+claude mcp add postman -- npx @postman/mcp-server
+
+# Verify all servers
+claude mcp test chrome-devtools
+claude mcp test context7
+uvx serena status
+claude mcp test postman
+```
+
 ## Testing Changes
 
 ### Test Locally
@@ -156,7 +212,9 @@ Each plugin has its own plugin.json with detailed metadata:
    claude /plugin install traya
    ```
 
-3. Test agents and commands:
+3. Set up MCP servers (see MCP Server Installation Commands above)
+
+4. Test agents and commands:
    ```bash
    claude /review
    claude agent shivraj-rails-reviewer "test message"

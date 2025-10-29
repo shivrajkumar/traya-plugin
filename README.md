@@ -245,13 +245,46 @@ The plugin embodies these compounding engineering principles:
 
 **Knowledge should be codified:** Learnings should be captured and reused. The research agents analyze your codebase to apply your own patterns back to you.
 
+## MCP Servers Integration
+
+The Traya plugin includes 5 integrated MCP servers that enhance your development workflow:
+
+### 1. **Figma MCP Server**
+Extract designs, design tokens, and generate code from Figma designs.
+- **Installation**: Install [Figma Desktop App](https://www.figma.com/downloads/) and enable MCP server in Preferences
+- **Capabilities**: get_code, get_variable_defs, get_code_connect_map, get_image, create_design_system_rules
+
+### 2. **Chrome DevTools MCP Server**
+Browser automation, visual testing, console debugging, and performance analysis.
+- **Installation**: `claude mcp add chrome-devtools -- npx @executeautomation/chrome-devtools-mcp`
+- **Capabilities**: screenshot, navigate, console_logs, network_monitor, performance_metrics, accessibility_audit, lighthouse_report
+
+### 3. **Context7 MCP Server**
+Access latest library documentation and best practices.
+- **Installation**: `claude mcp add context7 -- npx -y @upstash/context7-mcp`
+- **Capabilities**: search_documentation, get_latest_patterns, library_examples, framework_guides
+
+### 4. **Serena MCP Server**
+Semantic code analysis and symbol-level operations for efficient codebase understanding.
+- **Installation**: `claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant --project $(pwd)`
+- **Post-Install**: `uvx --from git+https://github.com/oraios/serena serena project index`
+- **Capabilities**: semantic_search, symbol_analysis, code_context, component_discovery
+
+### 5. **Postman MCP Server**
+API design, testing, and validation.
+- **Installation**: `claude mcp add postman -- npx @postman/mcp-server`
+- **Capabilities**: create_collection, test_endpoint, run_collection, validate_schema, performance_test
+
+**Note**: All MCP servers are marked as required for full plugin functionality. Install them after installing the Traya plugin.
+
 ## Getting Started
 
 1. Install the plugin using one of the methods above
-2. Run `/traya:plan` on your next feature idea
-3. Use `/traya:work` to execute the plan
-4. Run `/traya:review` before merging
-5. Repeat, and watch your development process compound
+2. Set up the required MCP servers (see MCP Servers Integration section)
+3. Run `/traya:plan` on your next feature idea
+4. Use `/traya:work` to execute the plan
+5. Run `/traya:review` before merging
+6. Repeat, and watch your development process compound
 
 Each cycle makes the next cycle easier. That's compounding engineering.
 
