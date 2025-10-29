@@ -140,61 +140,83 @@ Each plugin has its own plugin.json with detailed metadata:
 }
 ```
 
-## MCP Servers Configuration
+## Bundled MCP Servers
 
-The Traya plugin includes 5 integrated MCP servers in `plugin.json`:
+The Traya plugin bundles 5 MCP servers in `.mcp.json` that start automatically when the plugin is enabled:
 
-1. **Figma** - Design extraction and code generation
+1. **Figma** - Design extraction and code generation from Figma designs
 2. **Chrome DevTools** - Browser automation and testing
 3. **Context7** - Library documentation access
 4. **Serena** - Semantic code analysis
 5. **Postman** - API testing and validation
 
+### MCP Configuration File
+
+The `.mcp.json` file at the plugin root follows the standard MCP server format:
+
+```json
+{
+  "mcpServers": {
+    "figma": {
+      "command": "curl",
+      "args": ["-X", "POST", "http://127.0.0.1:3845/mcp"],
+      "env": {},
+      "disabled": false
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["@executeautomation/chrome-devtools-mcp"],
+      "env": {}
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "env": {}
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from", "git+https://github.com/oraios/serena",
+        "serena", "start-mcp-server",
+        "--context", "ide-assistant",
+        "--project", "."
+      ],
+      "env": {}
+    },
+    "postman": {
+      "command": "npx",
+      "args": ["@postman/mcp-server"],
+      "env": {}
+    }
+  }
+}
+```
+
 ### Adding New MCP Servers
 
 To add a new MCP server to the plugin:
 
-1. Edit `plugins/traya/.claude-plugin/plugin.json`
-2. Add new server to the `mcpServers` array:
+1. Edit `plugins/traya/.mcp.json`
+2. Add new server to the `mcpServers` object:
    ```json
-   {
-     "id": "server-id",
-     "name": "Server Name",
-     "description": "What this server does",
-     "install": {
-       "type": "npm|python|desktop-app",
-       "command": "installation command",
-       "verify": "verification command"
-     },
-     "capabilities": ["capability1", "capability2"],
-     "required": true
+   "server-name": {
+     "command": "npx",
+     "args": ["package-name"],
+     "env": {
+       "ENV_VAR": "value"
+     }
    }
    ```
-3. Update README.md with server documentation
-4. Test the installation command
+3. Use `${CLAUDE_PLUGIN_ROOT}` for plugin-relative paths
+4. Update README.md with server documentation
+5. Test the server integration
 
-### MCP Server Installation Commands
+### How Bundled MCP Servers Work
 
-```bash
-# Chrome DevTools
-claude mcp add chrome-devtools -- npx @executeautomation/chrome-devtools-mcp
-
-# Context7
-claude mcp add context7 -- npx -y @upstash/context7-mcp
-
-# Serena
-claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant --project $(pwd)
-uvx --from git+https://github.com/oraios/serena serena project index
-
-# Postman
-claude mcp add postman -- npx @postman/mcp-server
-
-# Verify all servers
-claude mcp test chrome-devtools
-claude mcp test context7
-uvx serena status
-claude mcp test postman
-```
+- **Automatic startup**: Servers start when the plugin is enabled
+- **Standard integration**: Servers appear as standard MCP tools in Claude's toolkit
+- **No manual installation**: Users don't need to run separate install commands
+- **Plugin isolation**: Server configs are scoped to the plugin
 
 ## Testing Changes
 
@@ -212,9 +234,14 @@ claude mcp test postman
    claude /plugin install traya
    ```
 
-3. Set up MCP servers (see MCP Server Installation Commands above)
+3. Bundled MCP servers start automatically
 
-4. Test agents and commands:
+4. (Optional) Index your project for Serena:
+   ```bash
+   uvx --from git+https://github.com/oraios/serena serena project index
+   ```
+
+5. Test agents and commands:
    ```bash
    claude /review
    claude agent shivraj-rails-reviewer "test message"
@@ -227,6 +254,7 @@ Before committing, ensure JSON files are valid:
 ```bash
 cat .claude-plugin/marketplace.json | jq .
 cat plugins/traya/.claude-plugin/plugin.json | jq .
+cat plugins/traya/.mcp.json | jq .
 ```
 
 ## Common Tasks

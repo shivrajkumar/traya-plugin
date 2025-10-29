@@ -245,46 +245,48 @@ The plugin embodies these compounding engineering principles:
 
 **Knowledge should be codified:** Learnings should be captured and reused. The research agents analyze your codebase to apply your own patterns back to you.
 
-## MCP Servers Integration
+## Bundled MCP Servers
 
-The Traya plugin includes 5 integrated MCP servers that enhance your development workflow:
+The Traya plugin includes 5 bundled MCP servers that automatically start when the plugin is enabled:
 
 ### 1. **Figma MCP Server**
 Extract designs, design tokens, and generate code from Figma designs.
-- **Installation**: Install [Figma Desktop App](https://www.figma.com/downloads/) and enable MCP server in Preferences
-- **Capabilities**: get_code, get_variable_defs, get_code_connect_map, get_image, create_design_system_rules
+- **Bundled**: Connects to Figma Desktop App at `http://127.0.0.1:3845/mcp`
+- **Requires**: [Figma Desktop App](https://www.figma.com/downloads/) with MCP server enabled in Preferences
+- **Capabilities**: Get code, variable definitions, code connect map, images, create design system rules
 
 ### 2. **Chrome DevTools MCP Server**
 Browser automation, visual testing, console debugging, and performance analysis.
-- **Installation**: `claude mcp add chrome-devtools -- npx @executeautomation/chrome-devtools-mcp`
-- **Capabilities**: screenshot, navigate, console_logs, network_monitor, performance_metrics, accessibility_audit, lighthouse_report
+- **Bundled**: Automatically available via `npx @executeautomation/chrome-devtools-mcp`
+- **Capabilities**: Screenshot capture, page navigation, console logs, network monitoring, performance metrics, accessibility audits, Lighthouse reports
 
-### 3. **Context7 MCP Server**
+### 2. **Context7 MCP Server**
 Access latest library documentation and best practices.
-- **Installation**: `claude mcp add context7 -- npx -y @upstash/context7-mcp`
-- **Capabilities**: search_documentation, get_latest_patterns, library_examples, framework_guides
+- **Bundled**: Automatically available via `npx @upstash/context7-mcp`
+- **Capabilities**: Search documentation, get latest patterns, library examples, framework guides
 
-### 4. **Serena MCP Server**
+### 3. **Serena MCP Server**
 Semantic code analysis and symbol-level operations for efficient codebase understanding.
-- **Installation**: `claude mcp add serena -- uvx --from git+https://github.com/oraios/serena serena start-mcp-server --context ide-assistant --project $(pwd)`
-- **Post-Install**: `uvx --from git+https://github.com/oraios/serena serena project index`
-- **Capabilities**: semantic_search, symbol_analysis, code_context, component_discovery
+- **Bundled**: Automatically available via `uvx` from `git+https://github.com/oraios/serena`
+- **Capabilities**: Semantic search, symbol analysis, code context, component discovery
+- **Note**: Requires initial project indexing: `uvx --from git+https://github.com/oraios/serena serena project index`
 
-### 5. **Postman MCP Server**
+### 4. **Postman MCP Server**
 API design, testing, and validation.
-- **Installation**: `claude mcp add postman -- npx @postman/mcp-server`
-- **Capabilities**: create_collection, test_endpoint, run_collection, validate_schema, performance_test
+- **Bundled**: Automatically available via `npx @postman/mcp-server`
+- **Capabilities**: Create collections, test endpoints, run collections, validate schemas, performance testing
 
-**Note**: All MCP servers are marked as required for full plugin functionality. Install them after installing the Traya plugin.
+**Integration**: These MCP servers are configured in `.mcp.json` and start automatically when you enable the Traya plugin. No manual installation required - they integrate seamlessly with Claude's existing tools.
 
 ## Getting Started
 
 1. Install the plugin using one of the methods above
-2. Set up the required MCP servers (see MCP Servers Integration section)
-3. Run `/traya:plan` on your next feature idea
-4. Use `/traya:work` to execute the plan
-5. Run `/traya:review` before merging
-6. Repeat, and watch your development process compound
+2. The bundled MCP servers will start automatically (no setup needed!)
+3. (Optional) For Serena: Run `uvx --from git+https://github.com/oraios/serena serena project index` to index your project
+4. Run `/traya:plan` on your next feature idea
+5. Use `/traya:work` to execute the plan
+6. Run `/traya:review` before merging
+7. Repeat, and watch your development process compound
 
 Each cycle makes the next cycle easier. That's compounding engineering.
 
