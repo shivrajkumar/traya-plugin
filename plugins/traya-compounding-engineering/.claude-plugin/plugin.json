@@ -1,5 +1,5 @@
 {
-  "name": "traya",
+  "name": "traya-compounding-engineering",
   "version": "1.0.0",
   "description": "AI-powered development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 16 specialized agents, 6 commands, and 4 skills.",
   "author": {
@@ -22,7 +22,8 @@
     "workflow-automation",
     "code-review",
     "quality",
-    "knowledge-management"
+    "knowledge-management",
+    "compounding-engineering"
   ],
   "mcpServers": "./.mcp.json"
 }

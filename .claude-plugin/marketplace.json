@@ -19,8 +19,8 @@
         "email": "shivrajkumar@traya.health"
       },
       "homepage": "https://github.com/shivrajkumar/traya-plugin",
-      "tags": ["ai-powered", "traya", "react", "nextjs", "typescript", "workflow-automation", "code-review", "quality", "knowledge-management"],
-      "source": "./plugins/traya"
+      "tags": ["ai-powered", "traya", "react", "nextjs", "typescript", "workflow-automation", "code-review", "quality", "knowledge-management", "figma", "testing", "ui-development", "compounding-engineering"],
+      "source": "./plugins/traya-compounding-engineering"
     }
   ]
 }
