@@ -1,0 +1,223 @@
+{
+  "name": "traya-react-native",
+  "version": "1.0.0",
+  "description": "AI-powered React Native development workflow with compounding engineering principles. Specialized agents, skills, and commands for building high-quality iOS and Android applications.",
+  "author": {
+    "name": "TrayaHealth",
+    "url": "https://github.com/trayahealth"
+  },
+  "homepage": "https://github.com/trayahealth/traya-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trayahealth/traya-plugin.git"
+  },
+  "keywords": [
+    "react-native",
+    "mobile-development",
+    "ios",
+    "android",
+    "typescript",
+    "workflow-automation",
+    "ai-powered",
+    "compounding-engineering",
+    "testing",
+    "code-review"
+  ],
+  "components": {
+    "agents": 16,
+    "commands": 6,
+    "skills": 4
+  },
+  "agents": {
+    "Core Development": [
+      {
+        "name": "rn-developer",
+        "description": "React Native component development with best practices, platform-specific patterns, and modern hooks",
+        "use_cases": [
+          "Building new React Native components",
+          "Implementing platform-specific features",
+          "Applying React Native design patterns"
+        ]
+      },
+      {
+        "name": "rn-typescript-reviewer",
+        "description": "TypeScript code review with React Native-specific type safety and conventions",
+        "use_cases": [
+          "Reviewing TypeScript code in RN projects",
+          "Ensuring type safety for native modules",
+          "Validating component prop types"
+        ]
+      },
+      {
+        "name": "rn-architecture-strategist",
+        "description": "React Native architecture analysis and design decisions for scalable mobile apps",
+        "use_cases": [
+          "Designing app architecture",
+          "Evaluating folder structure",
+          "Architecting feature modules"
+        ]
+      },
+      {
+        "name": "rn-best-practices-researcher",
+        "description": "Research React Native community best practices and emerging patterns",
+        "use_cases": [
+          "Finding RN best practices",
+          "Researching new RN features",
+          "Comparing implementation approaches"
+        ]
+      }
+    ],
+    "Specialized Development": [
+      {
+        "name": "rn-navigation-specialist",
+        "description": "React Navigation implementation with type-safe navigation patterns",
+        "use_cases": [
+          "Setting up React Navigation",
+          "Implementing deep linking",
+          "Type-safe navigation patterns"
+        ]
+      },
+      {
+        "name": "rn-state-management-expert",
+        "description": "State management with Redux, MobX, Zustand, or Context API patterns",
+        "use_cases": [
+          "Implementing state management",
+          "Choosing state solutions",
+          "Optimizing state updates"
+        ]
+      },
+      {
+        "name": "rn-native-module-specialist",
+        "description": "Native iOS/Android module integration and bridge communication",
+        "use_cases": [
+          "Creating native modules",
+          "Bridging native code",
+          "Platform-specific implementations"
+        ]
+      },
+      {
+        "name": "rn-styling-expert",
+        "description": "StyleSheet optimization, responsive design, and platform-specific styling",
+        "use_cases": [
+          "Creating responsive layouts",
+          "Platform-specific styles",
+          "Optimizing StyleSheet performance"
+        ]
+      },
+      {
+        "name": "rn-animation-specialist",
+        "description": "Reanimated and Animated API implementation with performance optimization",
+        "use_cases": [
+          "Implementing animations",
+          "Using Reanimated 2/3",
+          "Optimizing animation performance"
+        ]
+      }
+    ],
+    "Quality & Testing": [
+      {
+        "name": "rn-performance-analyzer",
+        "description": "React Native performance analysis including FPS, bridge calls, memory, and bundle size",
+        "use_cases": [
+          "Analyzing app performance",
+          "Reducing bundle size",
+          "Optimizing bridge communication"
+        ]
+      },
+      {
+        "name": "rn-testing-specialist",
+        "description": "Jest, React Native Testing Library, and Detox end-to-end testing",
+        "use_cases": [
+          "Writing unit tests",
+          "Component testing",
+          "E2E testing with Detox"
+        ]
+      },
+      {
+        "name": "rn-accessibility-auditor",
+        "description": "React Native accessibility compliance and screen reader optimization",
+        "use_cases": [
+          "Auditing accessibility",
+          "Implementing VoiceOver/TalkBack",
+          "WCAG compliance"
+        ]
+      },
+      {
+        "name": "rn-security-auditor",
+        "description": "React Native security including AsyncStorage, deep links, and permissions",
+        "use_cases": [
+          "Security auditing",
+          "Secure storage implementation",
+          "Deep link security"
+        ]
+      }
+    ],
+    "Platform Operations": [
+      {
+        "name": "ios-simulator-specialist",
+        "description": "iOS Simulator operations, debugging, and automated testing via MCP",
+        "use_cases": [
+          "Testing on iOS Simulator",
+          "Capturing screenshots",
+          "Automating iOS testing"
+        ]
+      },
+      {
+        "name": "android-device-specialist",
+        "description": "Android device/emulator operations, debugging, and automated testing via MCP",
+        "use_cases": [
+          "Testing on Android devices",
+          "Emulator management",
+          "Automating Android testing"
+        ]
+      },
+      {
+        "name": "rn-pattern-recognition",
+        "description": "Identify React Native patterns, anti-patterns, and code quality issues",
+        "use_cases": [
+          "Detecting code patterns",
+          "Identifying anti-patterns",
+          "Code quality analysis"
+        ]
+      }
+    ]
+  },
+  "commands": {
+    "Workflow": [
+      "plan",
+      "work",
+      "review"
+    ],
+    "Utilities": [
+      "triage",
+      "resolve_todo_parallel",
+      "generate_command"
+    ]
+  },
+  "skills": [
+    {
+      "name": "rn-ui-developer",
+      "description": "Complete UI development workflow from Figma to tested React Native components on iOS and Android"
+    },
+    {
+      "name": "rn-api-integrator",
+      "description": "API integration workflow with Postman testing and React Native service layer implementation"
+    },
+    {
+      "name": "rn-app-tester",
+      "description": "Comprehensive testing workflow covering functional, visual, performance, and accessibility testing"
+    },
+    {
+      "name": "rn-code-reviewer",
+      "description": "Dual-layer code review for task completion verification and technical quality assessment"
+    }
+  ],
+  "bundled_mcps": [
+    "ios-simulator",
+    "mobile-device",
+    "figma",
+    "postman",
+    "context7",
+    "serena"
+  ]
+}
