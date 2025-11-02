@@ -34,6 +34,19 @@
       "homepage": "https://github.com/shivrajkumar/traya-plugin",
       "tags": ["ai-powered", "react-native", "ios", "android", "mobile", "typescript", "workflow-automation", "testing", "figma", "performance", "accessibility", "compounding-engineering"],
       "source": "./plugins/traya-react-native"
+    },
+    {
+      "name": "traya-backend-engineering",
+      "description": "AI-powered backend development workflow with compounding engineering principles. Build scalable Node.js/NestJS APIs with 12 specialized agents, 5 workflow skills, and 6 commands. Covers PostgreSQL, MongoDB, Redis, TypeORM, OpenAPI documentation, security, and comprehensive testing.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Shivraj Kumar",
+        "url": "https://github.com/shivrajkumar",
+        "email": "shivrajkumar@traya.health"
+      },
+      "homepage": "https://github.com/shivrajkumar/traya-plugin",
+      "tags": ["ai-powered", "backend", "nodejs", "nestjs", "express", "api", "postgresql", "mongodb", "redis", "typeorm", "openapi", "swagger", "typescript", "workflow-automation", "testing", "security", "compounding-engineering"],
+      "source": "./plugins/traya-backend-engineering"
     }
   ]
 }
