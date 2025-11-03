@@ -1,13 +1,13 @@
 # TrayaHealth Marketplace - Claude Code Plugin Marketplace
 
-This repository is a Claude Code plugin marketplace that distributes TrayaHealth plugins to developers. It currently features two production-ready plugins: `traya-compounding-engineering` for React and Next.js web development, and `traya-react-native` for iOS and Android mobile development.
+This repository is a Claude Code plugin marketplace that distributes TrayaHealth plugins to developers. It currently features three production-ready plugins: `traya-compounding-engineering` for React and Next.js web development, `traya-react-native` for iOS and Android mobile development, and `traya-backend-engineering` for Node.js/NestJS backend development.
 
 ## Repository Structure
 
 ```
 traya-plugin/
 ├── .claude-plugin/
-│   └── marketplace.json                    # Marketplace catalog (lists both plugins)
+│   └── marketplace.json                    # Marketplace catalog (lists all plugins)
 └── plugins/
     ├── traya-compounding-engineering/      # Web development plugin (React/Next.js)
     │   ├── .claude-plugin/
@@ -17,13 +17,21 @@ traya-plugin/
     │   ├── skills/                         # 4 specialized skills
     │   ├── .mcp.json                       # 5 bundled MCP servers
     │   └── README.md                       # Plugin documentation
-    └── traya-react-native/                 # Mobile development plugin (iOS/Android)
+    ├── traya-react-native/                 # Mobile development plugin (iOS/Android)
+    │   ├── .claude-plugin/
+    │   │   └── plugin.json                 # Plugin metadata
+    │   ├── agents/                         # 16 specialized AI agents
+    │   ├── commands/                       # 6 slash commands
+    │   ├── skills/                         # 4 specialized skills
+    │   ├── .mcp.json                       # 6 bundled MCP servers
+    │   └── README.md                       # Plugin documentation
+    └── traya-backend-engineering/          # Backend development plugin (Node.js/NestJS)
         ├── .claude-plugin/
         │   └── plugin.json                 # Plugin metadata
-        ├── agents/                         # 16 specialized AI agents
+        ├── agents/                         # 12 specialized AI agents
         ├── commands/                       # 6 slash commands
-        ├── skills/                         # 4 specialized skills
-        ├── .mcp.json                       # 6 bundled MCP servers
+        ├── skills/                         # 5 specialized skills
+        ├── .mcp.json                       # 3 bundled MCP servers
         └── README.md                       # Plugin documentation
 ```
 
@@ -68,6 +76,10 @@ When agents or commands are added/removed in either plugin, follow these steps:
    # For traya-react-native
    ls plugins/traya-react-native/agents/*.md | wc -l
    ls plugins/traya-react-native/commands/*.md | wc -l
+
+   # For traya-backend-engineering
+   ls plugins/traya-backend-engineering/agents/*.md | wc -l
+   ls plugins/traya-backend-engineering/commands/*.md | wc -l
    ```
 
 2. **Update plugin.json** at `plugins/{plugin-name}/.claude-plugin/plugin.json`:
@@ -248,6 +260,9 @@ To add a new MCP server to the plugin:
 
    # For mobile plugin
    claude /plugin install traya-react-native
+
+   # For backend plugin
+   claude /plugin install traya-backend-engineering
    ```
 
 3. Bundled MCP servers start automatically
@@ -271,6 +286,12 @@ To add a new MCP server to the plugin:
    claude agent rn-developer "test message"
    ```
 
+   **For traya-backend-engineering:**
+   ```bash
+   claude /traya-backend-engineering:plan "test API feature"
+   claude agent api-designer "test message"
+   ```
+
 ### Validate JSON
 
 Before committing, ensure JSON files are valid:
@@ -286,6 +307,10 @@ cat plugins/traya-compounding-engineering/.mcp.json | jq .
 # Mobile plugin
 cat plugins/traya-react-native/.claude-plugin/plugin.json | jq .
 cat plugins/traya-react-native/.mcp.json | jq .
+
+# Backend plugin
+cat plugins/traya-backend-engineering/.claude-plugin/plugin.json | jq .
+cat plugins/traya-backend-engineering/.mcp.json | jq .
 ```
 
 ## Common Tasks
@@ -380,6 +405,10 @@ Tags should reflect the compounding engineering philosophy and target technologi
 **For traya-react-native (mobile):**
 - Core tags: `ai-powered`, `compounding-engineering`, `react-native`, `ios`, `android`, `mobile`, `typescript`
 - Additional: `workflow-automation`, `testing`, `figma`, `performance`, `accessibility`
+
+**For traya-backend-engineering (backend):**
+- Core tags: `ai-powered`, `compounding-engineering`, `backend`, `nodejs`, `nestjs`, `express`, `api`, `typescript`
+- Additional: `postgresql`, `mongodb`, `redis`, `typeorm`, `openapi`, `swagger`, `testing`, `security`
 
 Framework-specific tags are encouraged since each plugin is optimized for specific platforms.
 

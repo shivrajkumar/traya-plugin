@@ -1,10 +1,10 @@
 # TrayaHealth Claude Code Plugin Marketplace
 
-The official Traya Health Claude Code plugin marketplace where engineers from Traya Health share their workflows. Features two production-ready plugins for web and mobile development with AI-powered tools that implement compounding engineering principles.
+The official Traya Health Claude Code plugin marketplace where engineers from Traya Health share their workflows. Features three production-ready plugins for full-stack development: web (React/Next.js), mobile (iOS/Android), and backend (Node.js/NestJS) - all implementing compounding engineering principles.
 
 ## Available Plugins
 
-This marketplace provides two specialized plugins:
+This marketplace provides three specialized plugins for full-stack development:
 
 ### 🌐 traya-compounding-engineering
 **For React and Next.js web development**
@@ -30,6 +30,18 @@ Comprehensive React Native development workflow with end-to-end support for buil
 
 **Best for:** React Native mobile apps, cross-platform iOS/Android development
 
+### 🔧 traya-backend-engineering
+**For Node.js and NestJS backend development**
+
+Build scalable REST and GraphQL APIs with PostgreSQL, MongoDB, and Redis. Comprehensive workflow from API design to deployment with automated testing, security audits, and OpenAPI documentation.
+
+- **12 specialized agents** for API design, databases, caching, testing, and security
+- **6 commands** for backend feature planning, execution, and review
+- **5 workflow skills** including API development, database integration, and automated documentation
+- **3 bundled MCP servers** (Postman, Context7, Serena)
+
+**Best for:** REST APIs, GraphQL APIs, microservices, backend services
+
 ---
 
 ## Quick Start
@@ -50,6 +62,9 @@ Comprehensive React Native development workflow with end-to-end support for buil
 
 # For mobile development (React Native)
 /plugin install traya-react-native
+
+# For backend development (Node.js/NestJS)
+/plugin install traya-backend-engineering
 ```
 
 ### One-Command Installation
@@ -61,6 +76,9 @@ npx claude-plugins install @shivrajkumar/traya-plugin/traya-compounding-engineer
 
 # For mobile development
 npx claude-plugins install @shivrajkumar/traya-plugin/traya-react-native
+
+# For backend development
+npx claude-plugins install @shivrajkumar/traya-plugin/traya-backend-engineering
 ```
 
 This automatically adds the marketplace and installs the plugin in a single step.
@@ -488,7 +506,181 @@ All servers start automatically when the plugin is enabled.
    /review
    ```
 
+---
+
+# Backend Development Plugin (traya-backend-engineering)
+
+A specialized Claude Code plugin for Node.js and NestJS backend development that brings compounding engineering principles to API development. Build scalable REST and GraphQL APIs with PostgreSQL, MongoDB, and Redis, with comprehensive testing, security audits, and automated OpenAPI documentation.
+
+## Why Backend Development Needs Specialized Tools
+
+Backend development involves unique challenges:
+- **API design:** Consistent, well-documented REST and GraphQL endpoints
+- **Database modeling:** Normalized schemas, efficient queries, proper indexing
+- **Caching strategies:** Redis integration for performance optimization
+- **Security:** Authentication, authorization, input validation, OWASP compliance
+- **Testing:** Unit, integration, E2E, and load testing for APIs
+- **Documentation:** OpenAPI/Swagger specs that stay in sync with code
+
+The traya-backend-engineering plugin addresses these with specialized agents and automated workflows.
+
+## Key Features
+
+### 📝 Automated API Documentation
+Generate comprehensive OpenAPI 3.0/3.1 specifications automatically:
+- Extract API specs from NestJS decorators or Express routes
+- Generate Swagger UI integration
+- Create Postman collections with test scripts
+- AsyncAPI for event-driven APIs
+- GraphQL schema documentation
+
+### 🗄️ Database-First Development
+Comprehensive database integration workflow:
+- **PostgreSQL & MongoDB schema design** with normalization
+- **TypeORM entity generation** with relationships
+- **Migration management** with version control
+- **Query optimization** with explain plans
+- **Indexing strategies** for performance
+
+### 🔒 Security-First Approach
+Built-in security auditing and best practices:
+- **Authentication:** JWT, OAuth2, session management
+- **Authorization:** Role-based access control (RBAC)
+- **Input validation:** Request DTOs with class-validator
+- **OWASP Top 10** compliance checking
+- **Dependency scanning** for vulnerabilities
+
+### ⚡ Performance & Caching
+Redis integration for optimal performance:
+- **Caching strategies:** Cache-aside, write-through, write-behind
+- **Session management:** Distributed sessions with Redis
+- **Rate limiting:** API throttling and request limiting
+- **Query optimization:** Database query profiling
+
+### 🧪 Comprehensive Testing
+Automated testing across all layers:
+- **Unit tests:** Services, repositories, utilities (Jest)
+- **Integration tests:** Controllers with database (Supertest)
+- **E2E tests:** Full API workflows
+- **Postman collection validation:** Automated API testing
+- **Load testing:** Performance benchmarking
+
+## Practical Example: Building a User API
+
+```bash
+# 1. Plan the API
+/traya-backend-engineering:plan "Create user management API with CRUD operations, authentication, and role-based access control"
+
+# 2. Execute the plan (automatic workflow)
+/traya-backend-engineering:work plan-user-api.md
+
+# Behind the scenes, the plugin:
+# ✓ Designs REST API with OpenAPI specification
+# ✓ Creates PostgreSQL schema with TypeORM entities
+# ✓ Implements NestJS modules, controllers, services
+# ✓ Adds JWT authentication with guards
+# ✓ Implements RBAC with custom decorators
+# ✓ Generates request/response DTOs with validation
+# ✓ Creates unit and integration tests (Jest, Supertest)
+# ✓ Generates Swagger UI documentation
+# ✓ Adds Redis caching for user lookups
+# ✓ Implements rate limiting
+# ✓ Creates Postman collection with test scripts
+# ✓ Runs security audit (OWASP checks)
+# ✓ Profiles query performance
+# ✓ Reviews code quality
+
+# 3. Review before merging
+/traya-backend-engineering:review
+```
+
+**Result:** Production-ready user API with:
+- ✅ RESTful endpoints with proper HTTP methods
+- ✅ OpenAPI 3.0 specification with Swagger UI
+- ✅ JWT authentication with refresh tokens
+- ✅ Role-based authorization (admin, user)
+- ✅ PostgreSQL database with TypeORM
+- ✅ Redis caching for performance
+- ✅ Comprehensive test coverage (80%+)
+- ✅ OWASP security compliance
+- ✅ API documentation and Postman collection
+
+## Available Commands
+
+All commands optimized for backend development:
+
+- `/traya-backend-engineering:plan [feature]` - Create detailed API feature plans
+- `/traya-backend-engineering:work [plan]` - Execute with automatic skill invocation
+- `/traya-backend-engineering:review [PR]` - Backend-specific code review
+- `/traya-backend-engineering:triage` - Issue triage with backend considerations
+- `/traya-backend-engineering:resolve_todo_parallel` - Parallel todo resolution
+- `/traya-backend-engineering:generate_command` - Create custom backend commands
+
+## Specialized Agents (12 Total)
+
+**Core Development:**
+- api-designer, nestjs-specialist, express-specialist, typescript-reviewer
+
+**Database & ORM:**
+- database-modeler, typeorm-specialist, redis-cache-specialist
+
+**API Documentation:**
+- api-documenter
+
+**Quality & Testing:**
+- testing-specialist, performance-analyzer, security-auditor
+
+**Architecture:**
+- architecture-strategist
+
+## Bundled MCP Servers (3 Total)
+
+1. **Postman MCP** - API testing, collection management, validation
+2. **Context7 MCP** - Node.js, NestJS, Express, TypeORM documentation
+3. **Serena MCP** - Codebase pattern analysis
+
+All servers start automatically when the plugin is enabled.
+
+## Technology Stack
+
+Optimized for:
+- **Frameworks:** NestJS, Express.js
+- **Databases:** PostgreSQL, MongoDB
+- **ORM:** TypeORM
+- **Caching:** Redis
+- **Testing:** Jest, Supertest
+- **Documentation:** OpenAPI 3.0/3.1, Swagger, AsyncAPI
+- **API Testing:** Postman
+- **Security:** JWT, OAuth2, RBAC
+
+## Getting Started with Backend
+
+1. **Install the plugin:**
+   ```bash
+   /plugin install traya-backend-engineering
+   ```
+
+2. **Setup requirements:**
+   - **Node.js:** Version 18+ recommended
+   - **Database:** PostgreSQL or MongoDB running locally or remote
+   - **Redis:** Optional but recommended for caching
+   - **Postman:** Optional, for API testing
+
+3. **Index your project (optional):**
+   ```bash
+   uvx --from git+https://github.com/oraios/serena serena project index
+   ```
+
+4. **Start building:**
+   ```bash
+   /traya-backend-engineering:plan "Your API feature"
+   /traya-backend-engineering:work plan-file.md
+   /traya-backend-engineering:review
+   ```
+
 ## Learn More
 
-- **Full documentation:** See [plugins/traya-react-native/README.md](./plugins/traya-react-native/README.md)
+- **Web plugin documentation:** [plugins/traya-compounding-engineering/README.md](./plugins/traya-compounding-engineering/README.md)
+- **Mobile plugin documentation:** [plugins/traya-react-native/README.md](./plugins/traya-react-native/README.md)
+- **Backend plugin documentation:** [plugins/traya-backend-engineering/README.md](./plugins/traya-backend-engineering/README.md)
 - **Compounding engineering philosophy:** [Read Full Story](https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it)
