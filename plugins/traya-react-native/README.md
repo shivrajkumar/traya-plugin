@@ -93,8 +93,8 @@ The plugin automatically configures 6 MCP servers:
 
 From Claude Code:
 ```bash
-claude /plugin marketplace add https://github.com/trayahealth/traya-plugin
-claude /plugin install traya-react-native
+/plugin marketplace add git@github.com:trayalabs1/traya-plugin.git
+/plugin install traya-react-native
 ```
 
 ### 2. Setup Requirements
@@ -344,7 +344,7 @@ claude agent android-device-specialist "Test search on Android"
 ## Support
 
 For issues or questions:
-- GitHub Issues: https://github.com/trayahealth/traya-plugin/issues
+- GitHub Issues: https://github.com/trayalabs1/traya-plugin/issues
 - Documentation: https://docs.claude.com/en/docs/claude-code/plugins
 
 ## Contributing
