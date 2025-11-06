@@ -1,15 +1,15 @@
-# TrayaHealth Marketplace - Claude Code Plugin Marketplace
+# TrayaLabs Marketplace - Claude Code Plugin Marketplace
 
-This repository is a Claude Code plugin marketplace that distributes TrayaHealth plugins to developers. It currently features three production-ready plugins: `traya-compounding-engineering` for React and Next.js web development, `traya-react-native` for iOS and Android mobile development, and `traya-backend-engineering` for Node.js/NestJS backend development.
+This repository is a Claude Code plugin marketplace that distributes TrayaLabs plugins to developers. It currently features three production-ready plugins: `traya-frontend-engineering` for React and Next.js web development, `traya-react-native` for iOS and Android mobile development, and `traya-backend-engineering` for Node.js/NestJS backend development.
 
 ## Repository Structure
 
 ```
-traya-plugin/
+{repository-name}/
 ├── .claude-plugin/
 │   └── marketplace.json                    # Marketplace catalog (lists all plugins)
 └── plugins/
-    ├── traya-compounding-engineering/      # Web development plugin (React/Next.js)
+    ├── traya-frontend-engineering/         # Web development plugin (React/Next.js)
     │   ├── .claude-plugin/
     │   │   └── plugin.json                 # Plugin metadata
     │   ├── agents/                         # 16 specialized AI agents
@@ -69,9 +69,9 @@ When agents or commands are added/removed in either plugin, follow these steps:
 1. **Scan for actual files:**
 
    ```bash
-   # For traya-compounding-engineering
-   ls plugins/traya-compounding-engineering/agents/*.md | wc -l
-   ls plugins/traya-compounding-engineering/commands/*.md | wc -l
+   # For traya-frontend-engineering
+   ls plugins/traya-frontend-engineering/agents/*.md | wc -l
+   ls plugins/traya-frontend-engineering/commands/*.md | wc -l
 
    # For traya-react-native
    ls plugins/traya-react-native/agents/*.md | wc -l
@@ -98,7 +98,7 @@ When agents or commands are added/removed in either plugin, follow these steps:
    - Usually doesn't need changes unless changing plugin description/tags
    - Only update if modifying plugin-level metadata (description, version, tags)
 
-### Marketplace.json Structure
+### marketplace.json Structure
 
 The marketplace.json follows the official Claude Code spec:
 
@@ -220,7 +220,7 @@ The `.mcp.json` file at the plugin root follows the standard MCP server format:
 
 To add a new MCP server to the plugin:
 
-1. Edit `plugins/traya/.mcp.json`
+1. Edit `plugins/{plugin-name}/.mcp.json`
 2. Add new server to the `mcpServers` object:
    ```json
    "server-name": {
@@ -250,13 +250,15 @@ To add a new MCP server to the plugin:
 
    ```bash
    claude /plugin marketplace add /Users/yourusername/traya-plugin
+   # Or for the new remote:
+   # claude /plugin marketplace add https://github.com/trayalabs1/traya-plugin
    ```
 
 2. Install the plugin you want to test:
 
    ```bash
    # For web plugin
-   claude /plugin install traya-compounding-engineering
+   claude /plugin install traya-frontend-engineering
 
    # For mobile plugin
    claude /plugin install traya-react-native
@@ -274,9 +276,9 @@ To add a new MCP server to the plugin:
 
 5. Test agents and commands:
 
-   **For traya-compounding-engineering:**
+   **For traya-frontend-engineering:**
    ```bash
-   claude /traya-compounding-engineering:review
+   claude /traya-frontend-engineering:review
    claude agent typescript-reviewer "test message"
    ```
 
@@ -301,8 +303,8 @@ Before committing, ensure JSON files are valid:
 cat .claude-plugin/marketplace.json | jq .
 
 # Web plugin
-cat plugins/traya-compounding-engineering/.claude-plugin/plugin.json | jq .
-cat plugins/traya-compounding-engineering/.mcp.json | jq .
+cat plugins/traya-frontend-engineering/.claude-plugin/plugin.json | jq .
+cat plugins/traya-frontend-engineering/.mcp.json | jq .
 
 # Mobile plugin
 cat plugins/traya-react-native/.claude-plugin/plugin.json | jq .
@@ -322,10 +324,10 @@ cat plugins/traya-backend-engineering/.mcp.json | jq .
 3. Update `plugins/{plugin-name}/README.md` agent list
 4. Test with `claude agent new-agent "test"`
 
-**Example for traya-compounding-engineering:**
+**Example for traya-frontend-engineering:**
 ```bash
 # Create agent file
-touch plugins/traya-compounding-engineering/agents/new-agent.md
+touch plugins/traya-frontend-engineering/agents/new-agent.md
 # Update counts and test
 claude agent typescript-reviewer "test"
 ```
@@ -382,8 +384,8 @@ Invokes appropriate skills automatically:
 
 **Examples:**
 
-*traya-compounding-engineering (web):*
-- `/traya-compounding-engineering:plan` → `/traya-compounding-engineering:work` → `/traya-compounding-engineering:review`
+*traya-frontend-engineering (web):*
+- `/traya-frontend-engineering:plan` → `/traya-frontend-engineering:work` → `/traya-frontend-engineering:review`
 - Skills: ui-developer → api-integrator → ui-tester → code-reviewer
 
 *traya-react-native (mobile):*
@@ -398,8 +400,8 @@ Users only run three commands for complete workflow. Skills are invoked automati
 
 Tags should reflect the compounding engineering philosophy and target technologies for each plugin:
 
-**For traya-compounding-engineering (web):**
-- Core tags: `ai-powered`, `compounding-engineering`, `react`, `nextjs`, `typescript`, `workflow-automation`, `knowledge-management`
+**For traya-frontend-engineering (web):**
+- Core tags: `ai-powered`, `compounding-engineering`, `frontend`, `react`, `nextjs`, `typescript`, `workflow-automation`, `knowledge-management`
 - Additional: `code-review`, `quality`, `figma`, `testing`, `ui-development`
 
 **For traya-react-native (mobile):**

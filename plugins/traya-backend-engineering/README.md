@@ -126,8 +126,8 @@ This plugin is optimized for:
 
 From Claude Code:
 ```bash
-claude /plugin marketplace add https://github.com/trayahealth/traya-plugin
-claude /plugin install traya-backend-engineering
+/plugin marketplace add git@github.com:trayalabs1/traya-plugin.git
+/plugin install traya-backend-engineering
 ```
 
 ### 2. Setup Requirements
@@ -423,8 +423,8 @@ This plugin follows the compounding engineering philosophy. When adding new agen
 ## Support
 
 For issues or questions:
-- GitHub Issues: https://github.com/trayahealth/traya-plugin/issues
-- Documentation: https://github.com/trayahealth/traya-plugin
+- GitHub Issues: https://github.com/trayalabs1/traya-plugin/issues
+- Documentation: https://github.com/trayalabs1/traya-plugin
 
 ## License
 

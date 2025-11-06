@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "AI-powered backend development workflow with compounding engineering principles. Specialized agents, skills, and commands for building scalable Node.js/NestJS APIs with PostgreSQL, MongoDB, Redis, and TypeORM.",
   "author": {
-    "name": "TrayaHealth",
-    "url": "https://github.com/trayahealth"
+    "name": "TrayaLabs",
+    "url": "https://github.com/trayalabs1"
   },
-  "homepage": "https://github.com/trayahealth/traya-plugin",
+  "homepage": "https://github.com/trayalabs1/traya-plugin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/trayahealth/traya-plugin.git"
+    "url": "https://github.com/trayalabs1/traya-plugin.git"
   },
   "keywords": [
     "backend",
