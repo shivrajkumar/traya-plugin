@@ -1,0 +1,200 @@
+{
+  "name": "traya-backend-engineering",
+  "version": "1.0.0",
+  "description": "AI-powered backend development workflow with compounding engineering principles. Specialized agents, skills, and commands for building scalable Node.js/NestJS APIs with PostgreSQL, MongoDB, Redis, and TypeORM.",
+  "author": {
+    "name": "TrayaHealth",
+    "url": "https://github.com/trayahealth"
+  },
+  "homepage": "https://github.com/trayahealth/traya-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trayahealth/traya-plugin.git"
+  },
+  "keywords": [
+    "backend",
+    "nodejs",
+    "express",
+    "nestjs",
+    "postgresql",
+    "mongodb",
+    "redis",
+    "typeorm",
+    "api-development",
+    "rest-api",
+    "graphql",
+    "typescript",
+    "workflow-automation",
+    "ai-powered",
+    "compounding-engineering",
+    "openapi",
+    "swagger",
+    "testing",
+    "code-review"
+  ],
+  "components": {
+    "agents": 12,
+    "commands": 6,
+    "skills": 5
+  },
+  "agents": {
+    "Core Development": [
+      {
+        "name": "api-designer",
+        "description": "REST and GraphQL API design with industry best practices, OpenAPI specs, and scalable architecture patterns",
+        "use_cases": [
+          "Designing RESTful API endpoints",
+          "Creating GraphQL schemas",
+          "Generating OpenAPI/Swagger specifications"
+        ]
+      },
+      {
+        "name": "nestjs-specialist",
+        "description": "NestJS framework expertise including modules, dependency injection, guards, interceptors, and decorators",
+        "use_cases": [
+          "Building NestJS applications",
+          "Implementing DI patterns",
+          "Creating custom decorators and guards"
+        ]
+      },
+      {
+        "name": "express-specialist",
+        "description": "Express.js development with middleware patterns, routing, and modern best practices",
+        "use_cases": [
+          "Building Express applications",
+          "Creating custom middleware",
+          "Implementing route handlers"
+        ]
+      },
+      {
+        "name": "typescript-reviewer",
+        "description": "TypeScript code review with backend-specific type safety and Node.js conventions",
+        "use_cases": [
+          "Reviewing TypeScript backend code",
+          "Ensuring type safety for APIs",
+          "Validating DTO and entity types"
+        ]
+      }
+    ],
+    "Database & ORM": [
+      {
+        "name": "database-modeler",
+        "description": "Database design and modeling for PostgreSQL and MongoDB with schema optimization and migration strategies",
+        "use_cases": [
+          "Designing database schemas",
+          "Optimizing queries and indexes",
+          "Planning migration strategies"
+        ]
+      },
+      {
+        "name": "typeorm-specialist",
+        "description": "TypeORM expertise including entities, repositories, migrations, and query optimization",
+        "use_cases": [
+          "Creating TypeORM entities",
+          "Writing complex queries",
+          "Managing database migrations"
+        ]
+      },
+      {
+        "name": "redis-cache-specialist",
+        "description": "Redis caching strategies, session management, and performance optimization patterns",
+        "use_cases": [
+          "Implementing caching layers",
+          "Managing sessions with Redis",
+          "Optimizing cache strategies"
+        ]
+      }
+    ],
+    "API Documentation": [
+      {
+        "name": "api-documenter",
+        "description": "API documentation generation with OpenAPI 3.0, Swagger, AsyncAPI, GraphQL schemas, and Postman collections",
+        "use_cases": [
+          "Generating OpenAPI specifications",
+          "Creating Postman collections",
+          "Documenting GraphQL APIs",
+          "Maintaining API documentation"
+        ]
+      }
+    ],
+    "Quality & Testing": [
+      {
+        "name": "testing-specialist",
+        "description": "Backend testing with Jest, Supertest, integration tests, and E2E testing strategies",
+        "use_cases": [
+          "Writing unit tests for services",
+          "Creating integration tests",
+          "E2E API testing with Supertest"
+        ]
+      },
+      {
+        "name": "performance-analyzer",
+        "description": "Backend performance analysis including query optimization, memory profiling, and load testing",
+        "use_cases": [
+          "Analyzing API performance",
+          "Optimizing database queries",
+          "Load testing and profiling"
+        ]
+      },
+      {
+        "name": "security-auditor",
+        "description": "Backend security including authentication, authorization, input validation, and OWASP best practices",
+        "use_cases": [
+          "Security auditing APIs",
+          "Implementing JWT/OAuth",
+          "Input validation and sanitization"
+        ]
+      }
+    ],
+    "Architecture & Strategy": [
+      {
+        "name": "architecture-strategist",
+        "description": "Backend architecture analysis and design decisions for scalable microservices and monolithic APIs",
+        "use_cases": [
+          "Designing backend architecture",
+          "Evaluating project structure",
+          "Architecting microservices"
+        ]
+      }
+    ]
+  },
+  "commands": {
+    "Workflow": [
+      "plan",
+      "work",
+      "review"
+    ],
+    "Utilities": [
+      "triage",
+      "resolve_todo_parallel",
+      "generate_command"
+    ]
+  },
+  "skills": [
+    {
+      "name": "api-developer",
+      "description": "Complete API development workflow from design to tested endpoints with documentation"
+    },
+    {
+      "name": "api-documentation-generator",
+      "description": "Automated API documentation generation for OpenAPI, Swagger, GraphQL schemas, and Postman collections"
+    },
+    {
+      "name": "database-integrator",
+      "description": "Database integration workflow with TypeORM, migrations, and optimized query patterns"
+    },
+    {
+      "name": "api-tester",
+      "description": "Comprehensive API testing workflow covering unit, integration, and E2E tests with Postman validation"
+    },
+    {
+      "name": "code-reviewer",
+      "description": "Dual-layer code review for task completion verification and technical quality assessment"
+    }
+  ],
+  "bundled_mcps": [
+    "postman",
+    "context7",
+    "serena"
+  ]
+}
