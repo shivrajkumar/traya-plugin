@@ -1,0 +1,30 @@
+{
+  "name": "traya-frontend-engineering",
+  "version": "1.0.0",
+  "description": "AI-powered frontend development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 16 specialized agents, 6 commands, and 4 skills.",
+  "author": {
+    "name": "Shivraj Kumar",
+    "email": "shivrajkumar@traya.health",
+    "url": "https://github.com/trayalabs1"
+  },
+  "homepage": "https://github.com/trayalabs1/traya-plugin",
+  "repository": "https://github.com/trayalabs1/traya-plugin",
+  "license": "MIT",
+  "keywords": [
+    "ai-powered",
+    "traya",
+    "frontend",
+    "react",
+    "nextjs",
+    "typescript",
+    "figma",
+    "testing",
+    "ui-development",
+    "workflow-automation",
+    "code-review",
+    "quality",
+    "knowledge-management",
+    "compounding-engineering"
+  ],
+  "mcpServers": "./.mcp.json"
+}

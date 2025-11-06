@@ -1,15 +1,15 @@
-# TrayaHealth Claude Code Plugin Marketplace
+# TrayaLabs Claude Code Plugin Marketplace
 
-The official Traya Health Claude Code plugin marketplace where engineers from Traya Health share their workflows. Features three production-ready plugins for full-stack development: web (React/Next.js), mobile (iOS/Android), and backend (Node.js/NestJS) - all implementing compounding engineering principles.
+The official TrayaLabs Claude Code plugin marketplace where engineers share their workflows. Features three production-ready plugins for full-stack development: web (React/Next.js), mobile (iOS/Android), and backend (Node.js/NestJS) - all implementing compounding engineering principles.
 
 ## Available Plugins
 
 This marketplace provides three specialized plugins for full-stack development:
 
-### 🌐 traya-compounding-engineering
+### 🌐 traya-frontend-engineering
 **For React and Next.js web development**
 
-AI-powered development tools that make each unit of engineering work easier than the last. Transform feature ideas into structured plans, execute them systematically, and ensure quality with multi-agent code reviews.
+AI-powered frontend development tools that make each unit of engineering work easier than the last. Transform feature ideas into structured plans, execute them systematically, and ensure quality with multi-agent code reviews.
 
 **Key Features:**
 - **Figma to Code:** Extract designs and generate React/Next.js components with Tailwind CSS
@@ -21,13 +21,13 @@ AI-powered development tools that make each unit of engineering work easier than
 **Example Workflow:**
 ```bash
 # Plan feature from description
-/traya-compounding-engineering:plan "User dashboard with analytics charts"
+/traya-frontend-engineering:plan "User dashboard with analytics charts"
 
 # Execute with automatic skill invocation
-/traya-compounding-engineering:work plan-dashboard.md
+/traya-frontend-engineering:work plan-dashboard.md
 
 # Multi-agent code review before merging
-/traya-compounding-engineering:review
+/traya-frontend-engineering:review
 ```
 
 **Tech Stack:** React, Next.js, TypeScript, Tailwind CSS, Figma, Chrome DevTools
@@ -99,14 +99,14 @@ Build scalable REST and GraphQL APIs with PostgreSQL, MongoDB, and Redis. Compre
 **Step 1:** Add the marketplace to Claude:
 
 ```bash
-/plugin marketplace add https://github.com/shivrajkumar/traya-plugin
+/plugin marketplace add https://github.com/trayalabs1/traya-plugin
 ```
 
 **Step 2:** Install the plugin you need:
 
 ```bash
 # For web development (React/Next.js)
-/plugin install traya-compounding-engineering
+/plugin install traya-frontend-engineering
 
 # For mobile development (React Native)
 /plugin install traya-react-native
@@ -120,13 +120,13 @@ Use the [Claude Plugins CLI](https://claude-plugins.dev) to skip the marketplace
 
 ```bash
 # For web development
-npx claude-plugins install @shivrajkumar/traya-plugin/traya-compounding-engineering
+npx claude-plugins install @trayalabs1/traya-plugin/traya-frontend-engineering
 
 # For mobile development
-npx claude-plugins install @shivrajkumar/traya-plugin/traya-react-native
+npx claude-plugins install @trayalabs1/traya-plugin/traya-react-native
 
 # For backend development
-npx claude-plugins install @shivrajkumar/traya-plugin/traya-backend-engineering
+npx claude-plugins install @trayalabs1/traya-plugin/traya-backend-engineering
 ```
 
 This automatically adds the marketplace and installs the plugin in a single step.
@@ -139,7 +139,7 @@ Not sure which plugin to use? Here's a quick guide:
 
 | Your Project | Recommended Plugin | Why Choose This |
 |-------------|-------------------|-----------------|
-| **Web application** (React/Next.js SPA, SSR, SSG) | 🌐 `traya-compounding-engineering` | Figma-to-code workflow, Chrome DevTools testing, web-specific optimization, React/Next.js best practices |
+| **Web application** (React/Next.js SPA, SSR, SSG) | 🌐 `traya-frontend-engineering` | Figma-to-code workflow, Chrome DevTools testing, web-specific optimization, React/Next.js best practices |
 | **Mobile app** (iOS + Android cross-platform) | 📱 `traya-react-native` | Automatic testing on iOS Simulator AND Android devices, platform-specific agents, performance profiling (FPS, memory), accessibility auditing |
 | **REST/GraphQL API** (Backend services) | 🔧 `traya-backend-engineering` | OpenAPI/Swagger auto-generation, database integration (PostgreSQL/MongoDB/TypeORM), Redis caching, JWT/RBAC security |
 | **E-commerce site** (Frontend + API) | 🌐 Web + 🔧 Backend | Web plugin for storefront, Backend plugin for product/order APIs |
@@ -156,7 +156,7 @@ Not sure which plugin to use? Here's a quick guide:
 
 📚 **Complete documentation for each plugin:**
 
-- **[Web Plugin (React/Next.js)](./plugins/traya-compounding-engineering/README.md)**
+- **[Web Plugin (React/Next.js)](./plugins/traya-frontend-engineering/README.md)**
   - 16 agents, 6 commands, 4 skills, 5 MCP servers
   - Figma integration, Chrome DevTools, multi-agent code review
 

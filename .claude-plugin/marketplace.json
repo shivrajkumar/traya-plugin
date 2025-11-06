@@ -1,26 +1,26 @@
 {
   "name": "traya-plugin",
   "owner": {
-    "name": "TrayaHealth",
-    "url": "https://github.com/shivrajkumar"
+    "name": "TrayaLabs",
+    "url": "https://github.com/trayalabs1"
   },
   "metadata": {
-    "description": "Official TrayaHealth plugin marketplace for Claude Code extensions",
+    "description": "Official TrayaLabs plugin marketplace for Claude Code extensions",
     "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "traya-compounding-engineering",
-      "description": "AI-powered development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 16 specialized agents, 6 commands, and 4 skills.",
+      "name": "traya-frontend-engineering",
+      "description": "AI-powered frontend development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 16 specialized agents, 6 commands, and 4 skills.",
       "version": "1.0.0",
       "author": {
         "name": "Shivraj Kumar",
-        "url": "https://github.com/shivrajkumar",
+        "url": "https://github.com/trayalabs1",
         "email": "shivrajkumar@traya.health"
       },
-      "homepage": "https://github.com/shivrajkumar/traya-plugin",
-      "tags": ["ai-powered", "traya", "react", "nextjs", "typescript", "workflow-automation", "code-review", "quality", "knowledge-management", "figma", "testing", "ui-development", "compounding-engineering"],
-      "source": "./plugins/traya-compounding-engineering"
+      "homepage": "https://github.com/trayalabs1/traya-plugin",
+      "tags": ["ai-powered", "traya", "frontend", "react", "nextjs", "typescript", "workflow-automation", "code-review", "quality", "knowledge-management", "figma", "testing", "ui-development", "compounding-engineering"],
+      "source": "./plugins/traya-frontend-engineering"
     },
     {
       "name": "traya-react-native",
@@ -28,10 +28,10 @@
       "version": "1.0.0",
       "author": {
         "name": "Shivraj Kumar",
-        "url": "https://github.com/shivrajkumar",
+        "url": "https://github.com/trayalabs1",
         "email": "shivrajkumar@traya.health"
       },
-      "homepage": "https://github.com/shivrajkumar/traya-plugin",
+      "homepage": "https://github.com/trayalabs1/traya-plugin",
       "tags": ["ai-powered", "react-native", "ios", "android", "mobile", "typescript", "workflow-automation", "testing", "figma", "performance", "accessibility", "compounding-engineering"],
       "source": "./plugins/traya-react-native"
     },
@@ -41,10 +41,10 @@
       "version": "1.0.0",
       "author": {
         "name": "Shivraj Kumar",
-        "url": "https://github.com/shivrajkumar",
+        "url": "https://github.com/trayalabs1",
         "email": "shivrajkumar@traya.health"
       },
-      "homepage": "https://github.com/shivrajkumar/traya-plugin",
+      "homepage": "https://github.com/trayalabs1/traya-plugin",
       "tags": ["ai-powered", "backend", "nodejs", "nestjs", "express", "api", "postgresql", "mongodb", "redis", "typeorm", "openapi", "swagger", "typescript", "workflow-automation", "testing", "security", "compounding-engineering"],
       "source": "./plugins/traya-backend-engineering"
     }
