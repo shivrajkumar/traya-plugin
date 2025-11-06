@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "figma": {
+      "command": "curl",
+      "args": ["-X", "POST", "http://127.0.0.1:3845/mcp"],
+      "env": {},
+      "disabled": false
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["@executeautomation/chrome-devtools-mcp"],
+      "env": {}
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"],
+      "env": {}
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant",
+        "--project",
+        "."
+      ],
+      "env": {}
+    },
+    "postman": {
+      "command": "npx",
+      "args": ["@postman/mcp-server"],
+      "env": {}
+    }
+  }
+}
