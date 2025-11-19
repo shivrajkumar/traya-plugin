@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: rn-typescript-reviewer
 description: Use this agent to review TypeScript code in React Native projects with an extremely high quality bar. This agent ensures type safety, proper React Native type usage, correct navigation typing, proper native module type definitions, and strict TypeScript conventions. Invoke after implementing React Native features or when reviewing pull requests to validate TypeScript best practices and type safety.
 ---

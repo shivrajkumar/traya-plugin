@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: nestjs-specialist
 description: Use this agent when you need to build NestJS applications, implement dependency injection patterns, create modules and providers, or work with NestJS-specific features like guards, interceptors, and decorators. This agent specializes in NestJS architecture, TypeScript best practices, and building scalable server-side applications. Examples include creating REST controllers, implementing GraphQL resolvers, building custom decorators, or refactoring code to follow NestJS patterns.
 ---

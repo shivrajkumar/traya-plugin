@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: rn-state-management-expert
 description: Use this agent for implementing state management solutions in React Native apps including Redux, Zustand, MobX, Context API, and server state management with React Query. Invoke when architecting state management, choosing state solutions, implementing global state, optimizing state updates, or migrating between state management libraries.
 ---

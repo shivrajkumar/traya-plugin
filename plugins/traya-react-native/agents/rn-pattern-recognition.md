@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: rn-pattern-recognition
 description: Use this agent to identify React Native design patterns, anti-patterns, naming conventions, and code quality issues. Invoke when conducting code reviews, refactoring existing code, establishing coding standards, or detecting inconsistencies and anti-patterns in the codebase.
 ---

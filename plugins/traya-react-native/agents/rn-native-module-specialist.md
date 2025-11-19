@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: rn-native-module-specialist
 description: Use this agent for creating and integrating native iOS and Android modules with React Native, implementing native bridge communication, handling platform-specific native code, and optimizing bridge performance. Invoke when creating custom native modules, integrating third-party SDKs, implementing platform-specific features, or troubleshooting native module issues.
 ---

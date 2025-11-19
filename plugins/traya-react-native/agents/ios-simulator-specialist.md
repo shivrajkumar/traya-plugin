@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: ios-simulator-specialist
 description: Use this agent for iOS Simulator operations including launching apps, taking screenshots, simulating gestures, accessing UI elements, and debugging iOS-specific features using the iOS Simulator MCP. Invoke when testing iOS builds, capturing iOS screenshots, debugging iOS-specific issues, or automating iOS simulator interactions.
 ---

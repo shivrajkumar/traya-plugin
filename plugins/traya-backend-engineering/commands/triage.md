@@ -1,5 +1,18 @@
 # Triage Command for Backend Development
 
+## Model Recommendation
+
+**⚠️ MODEL SWITCH RECOMMENDED**: Switch to **Claude Sonnet** for this triage phase.
+
+For optimal results with this command:
+1. Switch to Sonnet model for careful analysis and decision-making
+2. Focus on assessment rather than implementation
+3. Use strategic thinking for prioritization
+
+This leverages our multi-model workflow: Sonnet for planning and assessment (70% quality, 30% cost).
+
+---
+
 Present all findings, decisions, or issues here one by one for triage. The goal is to go through each item and decide whether to add it to the CLI todo system.
 
 **IMPORTANT: DO NOT CODE ANYTHING DURING TRIAGE!**

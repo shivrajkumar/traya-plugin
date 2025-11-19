@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: redis-cache-specialist
 description: Use this agent when you need to implement caching, session management, rate limiting, or real-time features with Redis. This agent specializes in Redis data structures, caching strategies, pub/sub patterns, and performance optimization. Examples include implementing cache layers, managing user sessions, building rate limiters, or designing real-time notification systems.
 ---

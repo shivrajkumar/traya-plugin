@@ -2,6 +2,17 @@
 
 <command_purpose> Perform exhaustive backend code reviews using multi-agent analysis, ultra-thinking, and Git worktrees for deep local inspection of APIs, databases, and services. </command_purpose>
 
+## Model Recommendation
+
+**⚠️ MODEL SWITCH RECOMMENDED**: Switch to **Claude Sonnet** for this review phase.
+
+For optimal results with this command:
+1. Switch to Sonnet model for high-quality analysis and thorough reviews
+2. Leverage the specialized backend review agents configured with Sonnet for maximum quality
+3. Use multi-agent collaboration for comprehensive coverage
+
+This leverages our multi-model workflow: Sonnet for review and quality assurance (70% quality, 30% cost), ensuring thorough analysis.
+
 ## Introduction
 
 <role>Senior Backend Architect with expertise in API design, database optimization, security, performance, and distributed systems</role>

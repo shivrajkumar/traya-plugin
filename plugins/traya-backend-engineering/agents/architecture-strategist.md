@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: architecture-strategist
 description: Use this agent when you need to design backend architecture, make architectural decisions, or plan system scalability. This agent specializes in microservices, monolithic architectures, design patterns, system design, scalability planning, and architectural best practices. Examples include designing new services, refactoring architecture, planning for scale, or making technology choices.
 ---

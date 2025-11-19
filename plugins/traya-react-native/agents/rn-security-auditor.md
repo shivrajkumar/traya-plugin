@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: rn-security-auditor
 description: Use this agent for conducting security audits of React Native applications including secure storage, API security, deep link validation, code obfuscation, and mobile-specific security vulnerabilities. Invoke when implementing security features, auditing app security, handling sensitive data, or preparing for security reviews.
 ---

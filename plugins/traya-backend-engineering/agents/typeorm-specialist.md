@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: typeorm-specialist
 description: Use this agent when you need to work with TypeORM entities, repositories, migrations, or query builders. This agent specializes in TypeORM best practices, entity relationships, advanced querying, transaction management, and migration strategies. Examples include creating entities, implementing repositories, writing migrations, optimizing queries with QueryBuilder, or refactoring TypeORM code.
 ---

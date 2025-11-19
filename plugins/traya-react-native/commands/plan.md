@@ -1,5 +1,16 @@
 # Create GitHub Issue
 
+## Model Recommendation
+
+**⚠️ MODEL SWITCH RECOMMENDED**: Switch to **Claude Sonnet** for this planning phase.
+
+For optimal results with this command:
+1. Switch to Sonnet model for high-quality analysis and planning
+2. After planning complete, switch to Haiku for implementation phases
+3. Use Sonnet again for review phases
+
+This leverages our multi-model workflow: Sonnet for strategic thinking (70% quality, 30% cost), Haiku for execution (70% cost, 30% quality).
+
 ## Introduction
 
 Transform feature descriptions, bug reports, or improvement ideas into well-structured markdown files issues that follow project conventions and best practices. This command provides flexible detail levels to match your needs.

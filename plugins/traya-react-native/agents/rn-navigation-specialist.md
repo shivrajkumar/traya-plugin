@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: rn-navigation-specialist
 description: Use this agent for React Navigation implementation, type-safe navigation patterns, deep linking configuration, and navigation flow architecture. Invoke when setting up navigation, implementing complex navigation structures, configuring deep links, creating navigation guards, or optimizing navigation performance in React Native applications.
 ---

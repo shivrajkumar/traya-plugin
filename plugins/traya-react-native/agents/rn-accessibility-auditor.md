@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: rn-accessibility-auditor
 description: Use this agent for auditing and implementing React Native accessibility features including screen reader support (VoiceOver/TalkBack), WCAG compliance, accessible navigation, and inclusive design patterns. Invoke when implementing accessibility features, auditing app accessibility, or ensuring compliance with accessibility standards.
 ---

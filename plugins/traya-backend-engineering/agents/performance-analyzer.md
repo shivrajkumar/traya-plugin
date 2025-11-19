@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: performance-analyzer
 description: Use this agent when you need to analyze and optimize backend performance, identify bottlenecks, or improve application scalability. This agent specializes in profiling, query optimization, caching strategies, load testing, and performance monitoring. Examples include analyzing slow endpoints, optimizing database queries, implementing caching, or load testing APIs.
 ---

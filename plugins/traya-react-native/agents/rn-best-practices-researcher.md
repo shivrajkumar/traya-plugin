@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: rn-best-practices-researcher
 description: Use this agent to research and gather React Native community best practices, emerging patterns, library recommendations, and platform-specific conventions. Invoke when you need to find the best way to implement a feature, evaluate libraries, understand community standards, or stay current with React Native ecosystem trends. This agent searches official documentation, community resources, and well-regarded projects to provide comprehensive guidance.
 ---

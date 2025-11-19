@@ -1,5 +1,18 @@
 # Create a Custom Backend Command
 
+## Model Recommendation
+
+**⚠️ MODEL SWITCH RECOMMENDED**: Switch to **Claude Haiku** for this command generation phase.
+
+For optimal results with this command:
+1. Switch to Haiku model for fast command creation and implementation
+2. Focus on practical, executable command structure
+3. Use templates and patterns for consistency
+
+This leverages our multi-model workflow: Haiku for implementation and creation (70% cost, 30% quality).
+
+---
+
 Create a new slash command in `.claude/commands/` for backend development tasks.
 
 ## Goal

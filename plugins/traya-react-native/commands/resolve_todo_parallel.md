@@ -1,3 +1,18 @@
+# Resolve React Native TODOs in Parallel
+
+## Model Recommendation
+
+**⚠️ MODEL SWITCH RECOMMENDED**: Switch to **Claude Sonnet** for this TODO resolution phase.
+
+For optimal results with this command:
+1. Switch to Sonnet model for careful TODO analysis and resolution planning
+2. Use parallel processing to handle multiple TODOs efficiently
+3. Ensure strategic thinking for complex dependencies
+
+This leverages our multi-model workflow: Sonnet for complex analysis and planning (70% quality, 30% cost).
+
+---
+
 Resolve all TODO comments using parallel processing.
 
 ## Workflow

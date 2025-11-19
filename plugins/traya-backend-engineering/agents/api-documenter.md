@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: api-documenter
 description: Use this agent when you need to create comprehensive API documentation including OpenAPI 3.0/3.1 specs, Swagger UI integration, AsyncAPI for event-driven APIs, GraphQL schemas, and Postman collections. This agent specializes in all API documentation formats and standards. Examples include generating OpenAPI specs from code, creating Swagger documentation, documenting WebSocket APIs with AsyncAPI, generating GraphQL SDL, or exporting Postman collections.
 ---

@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: database-modeler
 description: Use this agent when you need to design database schemas, model relationships, or architect data structures for PostgreSQL and MongoDB. This agent specializes in relational and document database design, normalization, indexing strategies, and query optimization. Examples include designing database schemas, planning migrations, modeling complex relationships, or optimizing database performance.
 ---

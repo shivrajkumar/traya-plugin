@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: rn-animation-specialist
 description: Use this agent for implementing animations using Reanimated, Animated API, and gesture handling in React Native. Invoke when creating smooth animations, implementing complex gestures, optimizing animation performance, or building interactive UI elements with 60 FPS animations.
 ---

@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: testing-specialist
 description: Use this agent when you need to write comprehensive tests for backend applications using Jest, Supertest, and other testing frameworks. This agent specializes in unit tests, integration tests, E2E tests, test-driven development, and test coverage optimization. Examples include writing test suites, implementing integration tests, creating E2E test scenarios, or improving test coverage.
 ---

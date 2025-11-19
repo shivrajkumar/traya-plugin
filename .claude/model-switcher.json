@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "description": "Multi-model workflow configuration for TrayaLabs plugin marketplace",
+  "workflows": {
+    "planning": {
+      "model": "sonnet",
+      "description": "High-quality analysis and comprehensive planning phase",
+      "triggers": [
+        "/plan",
+        "/analyze",
+        "/design",
+        "/specify"
+      ],
+      "cost_weight": 0.3,
+      "quality_weight": 0.7,
+      "auto_confirm": false
+    },
+    "development": {
+      "model": "haiku",
+      "description": "Fast implementation with cost-effective execution",
+      "triggers": [
+        "/work",
+        "/implement",
+        "/create",
+        "/build"
+      ],
+      "cost_weight": 0.7,
+      "quality_weight": 0.3,
+      "auto_confirm": true
+    },
+    "review": {
+      "model": "sonnet",
+      "description": "Thorough code analysis and quality assurance",
+      "triggers": [
+        "/review",
+        "/audit",
+        "/validate",
+        "/test"
+      ],
+      "cost_weight": 0.4,
+      "quality_weight": 0.6,
+      "auto_confirm": false
+    }
+  },
+  "agent_overrides": {
+    "strategic": {
+      "feedback-codifier": "opus",
+      "architecture-strategist": "sonnet",
+      "repo-research-analyst": "sonnet"
+    },
+    "high-quality": {
+      "typescript-reviewer": "sonnet",
+      "security-sentinel": "sonnet",
+      "performance-oracle": "sonnet",
+      "ui-ux-designer": "sonnet"
+    },
+    "fast-execution": {
+      "frontend-developer": "haiku",
+      "backend-developer": "haiku",
+      "rn-developer": "haiku",
+      "nestjs-specialist": "haiku",
+      "express-specialist": "haiku",
+      "database-modeler": "haiku",
+      "test-automator": "haiku"
+    }
+  },
+  "cost_tracking": {
+    "enabled": true,
+    "budget_alerts": true,
+    "monthly_budget": 1000,
+    "currency": "USD"
+  },
+  "context_management": {
+    "preserve_across_switches": true,
+    "max_context_tokens": 8000,
+    "compression_threshold": 4000
+  },
+  "user_interface": {
+    "show_model_indicators": true,
+    "show_cost_estimates": true,
+    "confirmation_prompts": true,
+    "override_option": true
+  }
+}

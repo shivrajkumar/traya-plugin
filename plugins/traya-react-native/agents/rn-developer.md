@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: rn-developer
 description: Use this agent when you need to develop React Native components, implement platform-specific features, or apply React Native design patterns. This agent specializes in building high-quality mobile components with proper TypeScript types, performance optimization, and platform-specific implementations. Examples include creating new screens, building reusable components, implementing navigation flows, or refactoring existing React Native code to follow best practices.
 ---

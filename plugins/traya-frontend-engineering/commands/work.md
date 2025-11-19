@@ -1,5 +1,16 @@
 # Work Plan Execution Command
 
+## Model Recommendation
+
+**⚠️ MODEL SWITCH RECOMMENDED**: Switch to **Claude Haiku** for this execution phase.
+
+For optimal results with this command:
+1. Switch to Haiku model for fast, cost-effective implementation
+2. Use the specialized agents that have been configured with appropriate models
+3. Reserve Sonnet for complex strategic decisions within the workflow
+
+This leverages our multi-model workflow: Haiku for implementation (70% cost, 30% quality), with strategic agents automatically using Sonnet when needed.
+
 ## Introduction
 
 This command helps you analyze a work document (plan, Markdown file, specification, or any structured document), create a comprehensive todo list using the TodoWrite tool, and then systematically execute each task until the entire plan is completed. It combines deep analysis with practical execution to transform plans into reality.

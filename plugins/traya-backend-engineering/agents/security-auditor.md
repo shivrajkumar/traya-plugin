@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: security-auditor
 description: Use this agent when you need to audit backend security, implement authentication/authorization, or follow security best practices. This agent specializes in JWT authentication, role-based access control (RBAC), input validation, SQL injection prevention, XSS protection, and security auditing. Examples include implementing authentication flows, securing API endpoints, preventing common vulnerabilities, or conducting security reviews.
 ---

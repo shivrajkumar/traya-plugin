@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: rn-architecture-strategist
 description: Use this agent to analyze and design React Native application architecture, evaluate folder structure decisions, architect feature modules, and ensure scalable patterns for mobile development. Invoke when planning new React Native projects, refactoring existing apps, reviewing architectural decisions, or evaluating the impact of new features on system design.
 ---

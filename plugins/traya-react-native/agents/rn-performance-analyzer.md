@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: rn-performance-analyzer
 description: Use this agent to analyze React Native app performance including FPS monitoring, bundle size optimization, bridge call analysis, memory usage, and JavaScript thread performance. Invoke when experiencing performance issues, optimizing app speed, reducing bundle size, or ensuring smooth 60 FPS animations.
 ---

@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: rn-testing-specialist
 description: Use this agent for implementing comprehensive testing strategies including Jest unit tests, React Native Testing Library component tests, and Detox E2E tests. Invoke when writing tests, setting up testing infrastructure, implementing test coverage, or debugging test failures in React Native applications.
 ---

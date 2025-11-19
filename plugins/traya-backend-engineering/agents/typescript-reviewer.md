@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: typescript-reviewer
 description: Use this agent when you need to review backend TypeScript code, enforce type safety, or improve TypeScript patterns in Node.js applications. This agent specializes in TypeScript best practices, advanced types, generic patterns, and ensuring type safety across backend services. Examples include reviewing code for type errors, implementing proper generics, refactoring to leverage TypeScript features, or establishing TypeScript conventions.
 ---

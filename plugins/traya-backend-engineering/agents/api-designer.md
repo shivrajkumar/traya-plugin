@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: api-designer
 description: Use this agent when you need to design REST or GraphQL APIs, create OpenAPI specifications, or architect scalable API endpoints. This agent specializes in API design patterns, RESTful principles, GraphQL schema design, and generating industry-standard documentation. Examples include designing endpoint structures, creating OpenAPI/Swagger specs, architecting GraphQL schemas, or refactoring existing APIs to follow best practices.
 ---

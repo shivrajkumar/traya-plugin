@@ -1,0 +1,104 @@
+{
+  "model": "claude-sonnet-4-5-20250929",
+  "trayaMultiModelWorkflow": {
+    "enabled": true,
+    "version": "1.0.0",
+    "description": "TrayaLabs multi-model workflow optimization for cost-effective development",
+    "workflowPhases": {
+      "planning": {
+        "recommendedModel": "claude-sonnet-4-5-20250929",
+        "triggers": ["/plan", "/triage", "analyze", "design"],
+        "costWeight": 0.3,
+        "qualityWeight": 0.7,
+        "agentOverrides": {
+          "strategic": "claude-sonnet-4-5-20250929",
+          "architecture": "claude-sonnet-4-5-20250929"
+        }
+      },
+      "development": {
+        "recommendedModel": "claude-haiku-3-5-20241022",
+        "triggers": ["/work", "/implement", "/create", "/build"],
+        "costWeight": 0.7,
+        "qualityWeight": 0.3,
+        "agentOverrides": {
+          "implementation": "claude-haiku-3-5-20241022"
+        }
+      },
+      "review": {
+        "recommendedModel": "claude-sonnet-4-5-20250929",
+        "triggers": ["/review", "/audit", "/validate", "/test"],
+        "costWeight": 0.4,
+        "qualityWeight": 0.6,
+        "agentOverrides": {
+          "codeReview": "claude-sonnet-4-5-20250929",
+          "security": "claude-sonnet-4-5-20250929"
+        }
+      }
+    },
+    "autoModelSwitching": {
+      "enabled": false,
+      "notice": "Manual model switching required - see command recommendations",
+      "commandRecommendations": true
+    },
+    "costOptimization": {
+      "targetSavings": "40%",
+      "monthlyBudget": 1000,
+      "currency": "USD",
+      "alertThreshold": 800
+    }
+  },
+  "ui": {
+    "showModelIndicators": true,
+    "showWorkflowPhase": true,
+    "modelSwitchNotifications": true
+  },
+  "plugins": {
+    "traya-frontend-engineering": {
+      "enabled": true,
+      "workflowType": "frontend",
+      "modelMapping": {
+        "planning": "claude-sonnet-4-5-20250929",
+        "implementation": "claude-haiku-3-5-20241022",
+        "review": "claude-sonnet-4-5-20250929"
+      }
+    },
+    "traya-react-native": {
+      "enabled": true,
+      "workflowType": "mobile",
+      "modelMapping": {
+        "planning": "claude-sonnet-4-5-20250929",
+        "implementation": "claude-haiku-3-5-20241022",
+        "review": "claude-sonnet-4-5-20250929"
+      }
+    },
+    "traya-backend-engineering": {
+      "enabled": true,
+      "workflowType": "backend",
+      "modelMapping": {
+        "planning": "claude-sonnet-4-5-20250929",
+        "implementation": "claude-haiku-3-5-20241022",
+        "review": "claude-sonnet-4-5-20250929"
+      }
+    }
+  },
+  "hooks": {
+    "preCommand": {
+      "modelRecommendation": {
+        "enabled": true,
+        "message": "Consider switching models for optimal workflow performance"
+      }
+    },
+    "postAgentExecution": {
+      "modelCompatibility": {
+        "enabled": true,
+        "validate": true
+      }
+    }
+  },
+  "compoundingEngineering": {
+    "enabled": true,
+    "knowledgeRetention": true,
+    "patternLearning": true,
+    "workflowOptimization": true
+  }
+}

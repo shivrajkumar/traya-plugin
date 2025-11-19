@@ -1,4 +1,5 @@
 ---
+model: sonnet
 name: android-device-specialist
 description: Use this agent for Android device/emulator operations including launching apps, taking screenshots, simulating touches, accessing UI elements, and debugging Android-specific features using the Mobile Device MCP. Invoke when testing Android builds, capturing Android screenshots, debugging Android-specific issues, or automating Android device interactions.
 ---

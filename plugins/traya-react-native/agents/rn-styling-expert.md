@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: rn-styling-expert
 description: Use this agent for StyleSheet optimization, responsive design implementation, platform-specific styling, theme management, and styling best practices in React Native. Invoke when creating component styles, implementing responsive layouts, building design systems, optimizing style performance, or troubleshooting platform-specific styling issues.
 ---

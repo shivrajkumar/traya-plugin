@@ -1,4 +1,5 @@
 ---
+model: haiku
 name: express-specialist
 description: Use this agent when you need to build Express.js applications, implement middleware patterns, create route handlers, or work with Express-specific features. This agent specializes in Express architecture, middleware chains, error handling, and building scalable server applications with TypeScript. Examples include creating API routes, implementing custom middleware, handling file uploads, or refactoring code to follow Express best practices.
 ---
