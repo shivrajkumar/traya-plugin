@@ -414,6 +414,89 @@ Tags should reflect the compounding engineering philosophy and target technologi
 
 Framework-specific tags are encouraged since each plugin is optimized for specific platforms.
 
+## Notification Hooks
+
+This repository includes notification hooks that provide real-time feedback when Claude Code operations complete and when user input is required. This enhances developer workflow by allowing you to multitask while Claude works, getting notified when your attention is needed.
+
+### Configured Hooks
+
+The repository is configured with four notification hooks in `.claude/settings.local.json`:
+
+1. **PostToolUse** - Notifies after each tool execution
+   - Triggers: After any tool completes
+   - Use case: Track progress of long-running operations
+   - Notification: "Tool: [ToolName] completed"
+
+2. **PermissionRequest** - Alerts when user input needed
+   - Triggers: When permission dialog appears
+   - Use case: Alert user to check Claude Code for required input
+   - Notification: "User input required for: [ToolName]"
+   - Special: Includes terminal bell for immediate attention
+
+3. **Stop** - Notifies when Claude finishes responding
+   - Triggers: When Claude completes response
+   - Use case: Know when to review Claude's work
+   - Notification: "Claude Code operation completed"
+
+4. **SubagentStop** - Alerts when subagent completes
+   - Triggers: When subagent tasks finish
+   - Use case: Track completion of delegated tasks (Explore, Plan agents)
+   - Notification: "Subagent task completed: [SubagentType]"
+
+### Platform Support
+
+The notification system works across platforms:
+- **macOS**: Uses `osascript` for native desktop notifications
+- **Linux**: Uses `notify-send` for desktop notifications
+- **Fallback**: Terminal bell if no notification system available
+
+### How It Works
+
+Notifications are handled by `.claude/hooks/notify.sh`, which:
+- Detects your operating system automatically
+- Sends appropriate desktop notifications
+- Falls back gracefully to terminal bell
+- Logs errors silently without interrupting Claude operations
+
+### Customizing Notifications
+
+To customize notification messages, edit `.claude/hooks/notify.sh`:
+
+```bash
+# Example: Change PostToolUse notification message
+PostToolUse)
+    send_notification "My Custom Title" "Custom message: $CONTEXT"
+    ;;
+```
+
+### Disabling Hooks
+
+To disable specific hooks, comment them out in `.claude/settings.local.json`:
+
+```json
+{
+  "hooks": {
+    // "PostToolUse": [ ... ],  // Disabled
+    "PermissionRequest": [ ... ],  // Still active
+    "Stop": [ ... ],
+    "SubagentStop": [ ... ]
+  }
+}
+```
+
+To disable all notifications, remove the entire `"hooks"` section from settings.
+
+### Troubleshooting
+
+**Notifications not appearing:**
+- Check that notification permissions are granted for your terminal app
+- On macOS: System Settings → Notifications → Terminal/iTerm
+- On Linux: Ensure `notify-send` is installed (`sudo apt-get install libnotify-bin`)
+
+**Permission errors:**
+- Ensure `.claude/hooks/notify.sh` is executable: `chmod +x .claude/hooks/notify.sh`
+- Check logs at `.claude/hooks/notify.log` for error details
+
 ## Commit Conventions
 
 Follow these patterns for commit messages:
