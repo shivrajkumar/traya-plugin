@@ -119,6 +119,9 @@ uvx --from git+https://github.com/oraios/serena serena project index
 # Execute with automatic skill invocation
 /traya-frontend-engineering:work plan-dashboard.md
 
+# Test the implementation with automated browser testing
+/traya-frontend-engineering:test plan-dashboard.md
+
 # Multi-agent code review before merging
 /traya-frontend-engineering:review
 ```
@@ -137,6 +140,13 @@ Use the `work` command to execute plans with automatic skill invocation:
 - **API Integration**: `api-integrator` skill handles service layers and data fetching
 - **Testing**: `ui-tester` skill ensures quality through automated testing
 
+### Testing Phase
+Use the `test` command for automated feature validation:
+- **Test Generation**: Creates comprehensive TESTING.md from work documents
+- **Browser Automation**: Executes tests using Chrome DevTools MCP
+- **Quality Assurance**: Covers functional, visual, performance, accessibility, and error handling
+- **Results Reporting**: Provides detailed pass/fail results with fix recommendations
+
 ### Review Phase
 Use the `review` command for comprehensive quality assurance:
 - Multiple agents analyze code from different perspectives
@@ -147,25 +157,31 @@ Use the `review` command for comprehensive quality assurance:
 
 ### E-commerce Product Page
 ```bash
-# Plan the feature
+# 1. Plan the feature
 /traya-frontend-engineering:plan "Product page with image gallery, reviews, and add to cart"
 
-# Execute development
+# 2. Execute development
 /traya-frontend-engineering:work plan-product-page.md
 
-# Review before merging
+# 3. Test the implementation
+/traya-frontend-engineering:test plan-product-page.md
+
+# 4. Review before merging
 /traya-frontend-engineering:review
 ```
 
 ### Analytics Dashboard
 ```bash
-# Plan complex dashboard
+# 1. Plan complex dashboard
 /traya-frontend-engineering:plan "Analytics dashboard with charts, filters, and real-time data"
 
-# Automatic development workflow
+# 2. Automatic development workflow
 /traya-frontend-engineering:work plan-analytics-dashboard.md
 
-# Comprehensive review
+# 3. Automated testing
+/traya-frontend-engineering:test plan-analytics-dashboard.md
+
+# 4. Comprehensive review
 /traya-frontend-engineering:review
 ```
 
