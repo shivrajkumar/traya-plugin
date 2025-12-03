@@ -4,7 +4,7 @@ AI-powered frontend development workflow with compounding engineering principles
 
 ## Overview
 
-The Traya Frontend Engineering plugin brings comprehensive frontend development capabilities to Claude Code. It includes 16 specialized AI agents, 4 workflow skills, and 6 commands that leverage 5 bundled MCP servers to provide end-to-end support for React and Next.js development.
+The Traya Frontend Engineering plugin brings comprehensive frontend development capabilities to Claude Code. It includes 16 specialized AI agents, 4 workflow skills, and 7 commands that leverage 5 bundled MCP servers to provide end-to-end support for React and Next.js development.
 
 **Philosophy: Compounding Engineering**
 Each unit of engineering work should make subsequent units of work easier—not harder.
@@ -66,11 +66,12 @@ Each unit of engineering work should make subsequent units of work easier—not 
    - Best practices validation
    - Security and performance review
 
-### 6 Commands
+### 7 Commands
 
 **Workflow Commands:**
 - `plan` - Create structured development plans from feature descriptions
 - `work` - Execute development work with automatic skill invocation
+- `test` - Generate comprehensive test plans and execute automated browser testing
 - `review` - Comprehensive multi-agent code review
 
 **Utility Commands:**

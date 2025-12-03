@@ -1,7 +1,7 @@
 {
   "name": "traya-frontend-engineering",
   "version": "1.0.0",
-  "description": "AI-powered frontend development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 16 specialized agents, 6 commands, and 4 skills.",
+  "description": "AI-powered frontend development tools for React and Next.js that get smarter with every use. Make each unit of engineering work easier than the last. Includes 16 specialized agents, 7 commands, and 4 skills.",
   "author": {
     "name": "Shivraj Kumar",
     "email": "shivrajkumar@traya.health",
