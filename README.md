@@ -14,9 +14,9 @@ AI-powered frontend development tools that make each unit of engineering work ea
 **Key Features:**
 - **Figma to Code:** Extract designs and generate React/Next.js components with Tailwind CSS
 - **Multi-Agent Review:** 12+ specialized agents for security, performance, and architecture analysis
-- **Automated Testing:** Chrome DevTools integration for visual testing and console debugging
+- **Automated Testing:** Chrome DevTools integration for browser-based testing and validation
 - **Quality Compound:** Each feature improves code patterns for future work
-- **Component Count:** 16 agents, 6 commands, 4 skills, 5 MCP servers
+- **Component Count:** 16 agents, 7 commands, 4 skills, 5 MCP servers
 
 **Example Workflow:**
 ```bash
@@ -25,6 +25,9 @@ AI-powered frontend development tools that make each unit of engineering work ea
 
 # Execute with automatic skill invocation
 /traya-frontend-engineering:work plan-dashboard.md
+
+# Test with automated browser testing
+/traya-frontend-engineering:test plan-dashboard.md
 
 # Multi-agent code review before merging
 /traya-frontend-engineering:review
@@ -157,8 +160,8 @@ Not sure which plugin to use? Here's a quick guide:
 📚 **Complete documentation for each plugin:**
 
 - **[Web Plugin (React/Next.js)](./plugins/traya-frontend-engineering/README.md)**
-  - 16 agents, 6 commands, 4 skills, 5 MCP servers
-  - Figma integration, Chrome DevTools, multi-agent code review
+  - 16 agents, 7 commands, 4 skills, 5 MCP servers
+  - Figma integration, Chrome DevTools, automated testing, multi-agent code review
 
 - **[Mobile Plugin (iOS/Android)](./plugins/traya-react-native/README.md)**
   - 16 agents, 6 commands, 4 skills, 6 MCP servers
