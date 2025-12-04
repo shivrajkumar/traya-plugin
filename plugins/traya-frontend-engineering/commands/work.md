@@ -37,16 +37,17 @@ This command helps you analyze a work document (plan, Markdown file, specificati
 
 ### Phase 1: Environment Setup
 
-1. **Update Main Branch**
+1. **Verify Current Environment**
 
-   ```bash
-   git checkout main
-   git pull origin main
-   ```
+   - Confirm you're in the correct project directory
+   - Check current git branch: `git branch --show-current`
+   - Verify git status is clean or has only expected changes: `git status`
+   - Ensure all dependencies are installed
 
-2. **Create Feature Branch and Worktree**
+2. **Optional: Create Feature Branch and Worktree**
 
-   - Determine appropriate branch name from document
+   If you want isolated development without affecting your current directory, optionally create a worktree:
+
    - Get the root directory of the Git repository:
 
    ```bash
@@ -70,7 +71,7 @@ This command helps you analyze a work document (plan, Markdown file, specificati
    - Create the new worktree with feature branch:
 
    ```bash
-   git worktree add -b feature-branch-name "$git_root/.worktrees/feature-branch-name" main
+   git worktree add -b feature-branch-name "$git_root/.worktrees/feature-branch-name"
    ```
 
    - Change to the new worktree directory:
@@ -79,9 +80,10 @@ This command helps you analyze a work document (plan, Markdown file, specificati
    cd "$git_root/.worktrees/feature-branch-name"
    ```
 
-3. **Verify Environment**
-   - Confirm in correct worktree directory
-   - Install dependencies if needed
+   **Note:** If you prefer to work in your current directory with your current branch, skip worktree creation and proceed directly to Phase 2.
+
+3. **Install Dependencies (if needed)**
+   - Run `npm install` or `yarn install` if dependencies are missing
    - Run initial tests to ensure clean state
 
 ### Phase 2: Document Analysis and Planning
@@ -211,25 +213,47 @@ This command helps you analyze a work document (plan, Markdown file, specificati
    - Maintain work visibility
    - Document skill execution results
 
-### Phase 4: Completion and Submission
+### Phase 4: Local Testing, Review & Submission
 
-1. **Final Validation**
+1. **Final Local Validation**
 
    - Verify all tasks completed
-   - Run comprehensive test suite
+   - Run comprehensive test suite locally
    - Execute final lint and typecheck
    - Check all deliverables present
    - Ensure documentation updated
+   - Manually test all functionality
 
-2. **Prepare for Submission**
+2. **Review Changes Before Committing**
 
-   - Stage and commit all changes
-   - Write commit messages
-   - Push feature branch to remote
-   - Create detailed pull request
+   - Show current git status: `git status`
+   - Show detailed changes: `git diff`
+   - Stage changes: `git add .`
+   - Show staged changes: `git diff --cached`
+   - **Wait for your approval** before proceeding to commit
 
-3. **Create Pull Request**
+3. **Commit (After Manual Testing & Review)**
+
+   Only after you confirm that:
+   - All local testing is complete
+   - All functionality works as expected
+   - Changes are ready to be committed
+
+   Then commit with descriptive message:
    ```bash
-   git push -u origin feature-branch-name
+   git commit -m "Your descriptive commit message"
+   ```
+
+4. **Push (After Commit Approval)**
+
+   Only after you confirm the commit is correct:
+   ```bash
+   git push -u origin current-branch-name
+   ```
+
+5. **Create Pull Request (Optional, On Request)**
+
+   Create a pull request only when you're ready:
+   ```bash
    gh pr create --title "Feature: [Description]" --body "[Detailed description]"
    ```
